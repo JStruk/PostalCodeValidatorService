@@ -4,27 +4,40 @@
 #include <iostream>
 #include <string>
 #include "serviceUtils.h"
+#include "server.h"
 
 using namespace std;
 
+#define _WINSOCK_DEPRECATED_NO_WARNINGS
+
+#pragma warning (disable:4996)
+
 int main()
 {
+	
+	string	registryIP;
+	int		registryPort;
+	HostInfo hostInfo;
 
-	string	serverIP;
-	int		serverPort;
-    cout << "Please enter the Server IP: \n";
+    cout << "Please enter the Registry IP: \n";
 
-	getline(cin, serverIP);
+	getline(cin, registryIP);
 
-	cout << "Please enter the Server Port: \n";
+	cout << "Please enter the Registry Port: \n";
 
-	cin >> serverPort;
+	cin >> registryPort;
 
-	cout << serverIP << "\n" << serverPort;
+	cout << endl << "Registry IP: " << registryIP << endl << "Registry Port: " << registryPort << endl;
+	
+	Server server = Server();
+
+	hostInfo = server.initServer();
 
 	ServiceUtils s = ServiceUtils();
 
-	s.registerService(serverIP, serverPort);
+	s.registerService(hostInfo.IP, hostInfo.port);
+
+	server.listenForClients();
 	
 }
 

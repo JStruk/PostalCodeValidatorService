@@ -152,10 +152,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="PostalCodeValidator.cpp" />
+    <ClCompile Include="server.cpp" />
     <ClCompile Include="serviceUtils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="constants.h" />
+    <ClInclude Include="hostInfo.h" />
+    <ClInclude Include="server.h" />
     <ClInclude Include="serviceUtils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
