@@ -90,13 +90,3 @@ MCH|<ServiceIP>|<ServicePort>|
 		cout << "\n" << msg;
 		
 	}
-
-/*
-DRC|PUB-SERVICE|BOSS|1186|
-SRV|POSTAL|POSTAL_CODE_VALIDATOR|2|2|2|Validates a postal code based on their region|
-ARG|1|POSTAL_CODE|string|mandatory|
-ARG|2|REGION_CODE|string|mandatory|
-RSP|1|IS_PCODE_VALID|string|
-RSP|1|POSTAL-CODE_VALID|string|
-RSP|2|SPECIAL-NOTES|string|
-MCH|<ServiceIP>|<ServicePort>|*/

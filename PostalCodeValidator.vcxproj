@@ -151,15 +151,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="IniFile.cpp" />
     <ClCompile Include="PostalCodeValidator.cpp" />
     <ClCompile Include="server.cpp" />
+    <ClCompile Include="ServiceRequest.cpp" />
     <ClCompile Include="serviceUtils.cpp" />
+    <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="constants.h" />
     <ClInclude Include="hostInfo.h" />
+    <ClInclude Include="IniFile.h" />
     <ClInclude Include="server.h" />
+    <ClInclude Include="ServiceRequest.h" />
     <ClInclude Include="serviceUtils.h" />
+    <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

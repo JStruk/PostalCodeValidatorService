@@ -14,7 +14,7 @@
 #define PUBLISH_SERVICE_TAG "PUB-SERVICE"
 #define NUM_ARGS "2"
 #define NUM_RSP "2"
-#define DESCRIPTION "Given a postal code and region, determins if the postal code is valid."
+#define DESCRIPTION "Given a postal code and region, determins if the postal code is valid"
 #define RSP_NAME "totalPayValue"
 #define SERVICE_IP "<ServiceIP>"
 #define SERVICE_PORT "<ServicePort>"

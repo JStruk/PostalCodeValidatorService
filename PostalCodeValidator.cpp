@@ -3,40 +3,44 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
+#include <sstream> 
+#include "stdafx.h"
 #include "serviceUtils.h"
 #include "server.h"
+#include "IniFile.h"
 
 using namespace std;
-
-#define _WINSOCK_DEPRECATED_NO_WARNINGS
 
 #pragma warning (disable:4996)
 
 int main()
 {
-	
+	string FileName = "config.ini";
 	string	registryIP;
-	int		registryPort;
+	double		registryPort = 0;
 	HostInfo hostInfo;
 
-    cout << "Please enter the Registry IP: \n";
+	//Parse config file 
+	registryIP = CIniFile::GetValue("registryIP", "RegistryInfo", FileName);
+	string _port = CIniFile::GetValue("registryPort", "RegistryInfo", FileName);
 
-	getline(cin, registryIP);
-
-	cout << "Please enter the Registry Port: \n";
-
-	cin >> registryPort;
+	stringstream port(_port);
+	port >> registryPort;
 
 	cout << endl << "Registry IP: " << registryIP << endl << "Registry Port: " << registryPort << endl;
 	
+	//Setup the server to listen for connections to the service
 	Server server = Server();
 
 	hostInfo = server.initServer();
 
 	ServiceUtils s = ServiceUtils();
 
+	//Register the service with the registry
 	s.registerService(hostInfo.IP, hostInfo.port);
 
+	//Start accepting clients / requests
 	server.listenForClients();
 	
 }
