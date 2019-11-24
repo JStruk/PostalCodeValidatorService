@@ -4,6 +4,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
+#include <regex>
+
+#include "ResponseMessage.h"
 
 using namespace std;
 
@@ -26,17 +29,26 @@ public:
 	string arg2DataType;
 	string arg2Value;
 
+	//For parsing purposes - if error occurs when parsing, this flag will go true and a ResponseMessage object built
+	bool errorOccured = false;
+	ResponseMessage responseMessage;
+
 	ServiceRequest(string _teamname, string _teamid,
 		string _arg1, string _arg1name, string _arg1datatype, string _arg1val,
 		string _arg2, string _arg2name, string _arg2datatype, string _arg2val);
+
+	ServiceRequest(bool errorOcc, ResponseMessage rMessage) {
+		errorOccured = errorOcc;
+		responseMessage = rMessage;
+	}
 	
 	void PrintRequest();
 
-	void process();
+	ResponseMessage process();
 
 	void buildReturnMsg();
 
-	void verifyTeam();
+	int Verify();
 };
 
 

@@ -15,9 +15,12 @@
 #include <thread> 
 #include <iostream>
 #include <algorithm>
+#include <string>
 
 #include "ServiceRequest.h"
 #include "hostInfo.h"
+#include "ResponseMessage.h"
+#include "ServiceRequest.h"
 
 // Need to link with Ws2_32.lib
 #pragma comment (lib, "Ws2_32.lib")
@@ -57,5 +60,6 @@ public:
 	HostInfo getIP();
 	void listenForClients();
 	void processClientRequest(SOCKET clientsocket);
+	ServiceRequest parseRequest(string msg);
 
 };

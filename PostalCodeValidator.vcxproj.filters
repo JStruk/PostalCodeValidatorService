@@ -56,5 +56,13 @@
     <ClInclude Include="ServiceRequest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ResponseMessage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ResponseMessage.cpp">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

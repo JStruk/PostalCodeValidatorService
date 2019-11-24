@@ -11,9 +11,6 @@ void Server::processClientRequest(SOCKET clientsocket) {
 	memset(recvbuf, '\0', DEFAULT_BUFLEN);
 	int recvbuflen = DEFAULT_BUFLEN;
 
-	string msgParser[23];
-	//string msg;
-
 	// Receive until the peer shuts down the connection
 	do {
 
@@ -25,157 +22,105 @@ void Server::processClientRequest(SOCKET clientsocket) {
 			//2. If valid execute service message, verify team
 			//3. Process request
 			//4. Construct response
-			//cout << "Received: " << msg << endl;
 
 			string s = string(msg);
 			//remove any spaces from the message before parsing
 			s.erase(remove(s.begin(), s.end(), ' '), s.end());
 
-			string delim = "|";
+			//cout << "Parsing request" << endl;
+			ServiceRequest serviceRequest = parseRequest(s);
 
-			auto start = 0U;
-			auto end = s.find(delim);
-			int count = 0;
+			if (serviceRequest.errorOccured) {
+				//Error occured when parsing the service request message, send error message to client
+				//Since the message has been setup an error has occured - let's build and send this reponse message!
+				string errorMsg = serviceRequest.responseMessage.constructResponseMessage();
 
-			string drc = s.substr(start, end - start);
+				if (errorMsg.size() > DEFAULT_BUFLEN) {
+					cout << "Reponse Message too long";
+					continue;
+				}
 
-			if (drc != "DRC") {
-				//Invalid message
-				cout << "Invalid Request";
-				break;
+				memset(recvbuf, '\0', DEFAULT_BUFLEN);
+				strcpy(recvbuf, errorMsg.c_str());
+				int responseLength = errorMsg.size();
+
+				iSendResult = send(clientsocket, recvbuf, responseLength, 0);
+				if (iSendResult == SOCKET_ERROR) {
+					printf("send failed with error: %d\n", WSAGetLastError());
+					closesocket(clientsocket);
+					WSACleanup();
+				}
+				printf("\n\nResponse Sent: %s\n\n", recvbuf);
+
+				//Sent response to client - continue to wait for next message or socket closure
+				continue;
 			}
 
-			start = end + delim.length();
-			end = s.find(delim, start);
-			string exec = s.substr(start, end - start);
+			//2. Verify Team and other tings
+			int isValidRequest = serviceRequest.Verify();
 
-			if (exec != "EXEC-SERVICE") {
-				cout << "Invalid Request";
-				break;
+			ResponseMessage responseMsg;
+
+			//If request is invalid return errorCode and errorMessage based on error
+			if (isValidRequest == 1) {
+				//Invalid Team
+				responseMsg = ResponseMessage(false, "-1", "Sorry – Team could not be verified with registry");
+			}
+			else if (isValidRequest == 2) {
+				//Invalid data type
+				responseMsg = ResponseMessage(false, "-2", "Invalid Argument Data Type");
+			}
+			else if (isValidRequest == 3) {
+				//Invalid arg position?
+				responseMsg = ResponseMessage(false, "-2", "Invalid Argument position");
+			}
+			else if (isValidRequest == 4) {
+				//Invalid argument
+				responseMsg = ResponseMessage(false, "-2", "Invalid Argument (PostalCode must be A1A1A1 and valid RegionCode must be provided");
 			}
 
-			start = end + delim.length();
-			end = s.find(delim, start);
-			string teamName = s.substr(start, end - start);
-			
-			start = end + delim.length();
-			end = s.find(delim, start);
-			string teamID = s.substr(start, end - start);
+			if (responseMsg.hasBeenSetup) {
+				//Since the message has been setup an error has occured - let's build and send this reponse message!
+				string errorMsg = responseMsg.constructResponseMessage();
 
-			start = end + delim.length();
-			end = s.find(delim, start);
-			string srv = s.substr(start, end - start);
-			
-			if (srv != "SRV") {
-				cout << "invalid Request";
-				break;
+				if (errorMsg.size() > DEFAULT_BUFLEN) {
+					cout << "Reponse Message too long";
+					continue;
+				}
+
+				memset(recvbuf, '\0', DEFAULT_BUFLEN);
+				strcpy(recvbuf, errorMsg.c_str());
+
+				int responseLength = errorMsg.size();
+				iSendResult = send(clientsocket, recvbuf, responseLength, 0);
+				if (iSendResult == SOCKET_ERROR) {
+					printf("send failed with error: %d\n", WSAGetLastError());
+					closesocket(clientsocket);
+					WSACleanup();
+					//return 1;
+					// ****HANDLE ERROR HERE
+				}
+				printf("\n\nResponse Sent: %s\n\n", recvbuf);
+
+				//Sent response to client - continue to wait for next message or socket closure
+				continue;
+
+			}
+			responseMsg = serviceRequest.process();
+
+			//We've processed the service request - construct and send response to client
+			string rMsg = responseMsg.constructResponseMessage();
+
+			if (rMsg.size() > DEFAULT_BUFLEN) {
+				cout << "Reponse Message too long";
+				continue;
 			}
 
-			start = end + delim.length();
-			end = s.find(delim, start);
-			string ph = s.substr(start, end - start);
+			memset(recvbuf, '\0', DEFAULT_BUFLEN);
+			strcpy(recvbuf, rMsg.c_str());
+			int responseLength = rMsg.size();
 
-			start = end + delim.length();
-			end = s.find(delim, start);
-			string serviceName = s.substr(start, end - start);
-
-			start = end + delim.length();
-			end = s.find(delim, start);
-			string ph2 = s.substr(start, end - start);
-
-			start = end + delim.length();
-			end = s.find(delim, start);
-			string numArgs = s.substr(start, end - start);
-
-			start = end + delim.length();
-			end = s.find(delim, start);
-			string ph3 = s.substr(start, end - start);
-
-			start = end + delim.length();
-			end = s.find(delim, start);
-			string ph4 = s.substr(start, end - start);
-
-			start = end + delim.length();
-			end = s.find(delim, start);
-			string arg = s.substr(start, end - start);
-
-			if (arg != "ARG") {
-				cout << "Invalid Request" << endl;
-				break;
-			}
-
-			start = end + delim.length();
-			end = s.find(delim, start);
-			string arg1pos = s.substr(start, end - start);
-
-			start = end + delim.length();
-			end = s.find(delim, start);
-			string arg1name = s.substr(start, end - start);
-
-			start = end + delim.length();
-			end = s.find(delim, start);
-			string arg1Datatype = s.substr(start, end - start);
-
-			start = end + delim.length();
-			end = s.find(delim, start);
-			string ph5 = s.substr(start, end - start);
-			
-			start = end + delim.length();
-			end = s.find(delim, start);
-			string arg1Val = s.substr(start, end - start);
-
-			//
-			start = end + delim.length();
-			end = s.find(delim, start);
-			string arg2 = s.substr(start, end - start);
-
-			if (arg2 != "ARG") {
-				cout << "Invalid Request" << endl;
-				break;
-			}
-
-			start = end + delim.length();
-			end = s.find(delim, start);
-			string arg2pos = s.substr(start, end - start);
-
-			start = end + delim.length();
-			end = s.find(delim, start);
-			string arg2name = s.substr(start, end - start);
-
-			start = end + delim.length();
-			end = s.find(delim, start);
-			string arg2Datatype = s.substr(start, end - start);
-
-			start = end + delim.length();
-			end = s.find(delim, start);
-			string ph6 = s.substr(start, end - start);
-
-			start = end + delim.length();
-			end = s.find(delim, start);
-			string arg2Val = s.substr(start, end - start);
-
-			ServiceRequest serviceRequest = ServiceRequest(teamName, teamID, arg, arg1name, arg1Datatype, arg1Val,
-				arg2, arg2name, arg2Datatype, arg2Val);
-
-			//serviceRequest.PrintRequest();
-
-			//2. Verify Team
-			serviceRequest.verifyTeam();
-
-			serviceRequest.process();
-			//cout << s.substr(start, end);
-			//cout << count << endl;
-
-			// Response Message to sender
-			/*
-			Pass:
-			PUB|OK|||<num segments>|
-			RSP|<resp position>|<resp name>|<resp data type>|<resp value>|
-
-			Fail:
-			PUB|NOT-OK|errorCode|errorMessage||
-			*/
-			/*iSendResult = send(clientsocket, recvbuf, iResult, 0);
+			iSendResult = send(clientsocket, recvbuf, responseLength, 0);
 			if (iSendResult == SOCKET_ERROR) {
 				printf("send failed with error: %d\n", WSAGetLastError());
 				closesocket(clientsocket);
@@ -183,7 +128,12 @@ void Server::processClientRequest(SOCKET clientsocket) {
 				//return 1;
 				// ****HANDLE ERROR HERE
 			}
-			printf("Response Sent: %s\n", recvbuf);*/
+			printf("\n\nResponse Sent: %s\n\n", recvbuf);
+
+			//build and send response message for SOA-OK
+
+
+			
 		}
 		else if (iResult == 0)
 			printf("Connection closing...\n");
@@ -208,8 +158,138 @@ void Server::processClientRequest(SOCKET clientsocket) {
 	}
 }
 
-void test() {
+ServiceRequest Server::parseRequest(string s) {
 
+	string delim = "|";
+
+	auto start = 0U;
+	auto end = s.find(delim);
+	int count = 0;
+
+	string drc = s.substr(start, end - start);
+
+	if (drc != "DRC") {
+		//Invalid message
+		ResponseMessage r = ResponseMessage(false, "-1", "Invalid EXEC-SERVICE request");
+		return ServiceRequest(true, r);
+		cout << "Invalid Request - DRC";
+	}
+
+	start = end + delim.length();
+	end = s.find(delim, start);
+	string exec = s.substr(start, end - start);
+
+	if (exec != "EXEC-SERVICE") {
+		ResponseMessage r = ResponseMessage(false, "-1", "Invalid EXEC-SERVICE request");
+		return ServiceRequest(true, r);
+		cout << "Invalid Request";
+	}
+
+	start = end + delim.length();
+	end = s.find(delim, start);
+	string teamName = s.substr(start, end - start);
+
+	start = end + delim.length();
+	end = s.find(delim, start);
+	string teamID = s.substr(start, end - start);
+
+	start = end + delim.length();
+	end = s.find(delim, start);
+	string srv = s.substr(start, end - start);
+
+	if (srv != "SRV") {
+		cout << "invalid Request - SRV";
+		ResponseMessage r = ResponseMessage(false, "-1", "Invalid EXEC-SERVICE request");
+		return ServiceRequest(true, r);
+	}
+
+	start = end + delim.length();
+	end = s.find(delim, start);
+	string ph = s.substr(start, end - start);
+
+	start = end + delim.length();
+	end = s.find(delim, start);
+	string serviceName = s.substr(start, end - start);
+
+	start = end + delim.length();
+	end = s.find(delim, start);
+	string ph2 = s.substr(start, end - start);
+
+	start = end + delim.length();
+	end = s.find(delim, start);
+	string numArgs = s.substr(start, end - start);
+
+	start = end + delim.length();
+	end = s.find(delim, start);
+	string ph3 = s.substr(start, end - start);
+
+	start = end + delim.length();
+	end = s.find(delim, start);
+	string ph4 = s.substr(start, end - start);
+
+	start = end + delim.length();
+	end = s.find(delim, start);
+	string arg = s.substr(start, end - start);
+
+	if (arg != "ARG") {
+		cout << "Invalid Request - ARG" << endl;
+		ResponseMessage r = ResponseMessage(false, "-1", "Invalid EXEC-SERVICE request");
+		return ServiceRequest(true, r);
+	}
+
+	start = end + delim.length();
+	end = s.find(delim, start);
+	string arg1pos = s.substr(start, end - start);
+
+	start = end + delim.length();
+	end = s.find(delim, start);
+	string arg1name = s.substr(start, end - start);
+
+	start = end + delim.length();
+	end = s.find(delim, start);
+	string arg1Datatype = s.substr(start, end - start);
+
+	start = end + delim.length();
+	end = s.find(delim, start);
+	string ph5 = s.substr(start, end - start);
+
+	start = end + delim.length();
+	end = s.find(delim, start);
+	string arg1Val = s.substr(start, end - start);
+
+	//
+	start = end + delim.length();
+	end = s.find(delim, start);
+	string arg2 = s.substr(start, end - start);
+
+	if (arg2 != "ARG") {
+		cout << "Invalid Request - ARG" << endl;
+		ResponseMessage r = ResponseMessage(false, "-1", "Invalid EXEC-SERVICE request");
+		return ServiceRequest(true, r);
+	}
+
+	start = end + delim.length();
+	end = s.find(delim, start);
+	string arg2pos = s.substr(start, end - start);
+
+	start = end + delim.length();
+	end = s.find(delim, start);
+	string arg2name = s.substr(start, end - start);
+
+	start = end + delim.length();
+	end = s.find(delim, start);
+	string arg2Datatype = s.substr(start, end - start);
+
+	start = end + delim.length();
+	end = s.find(delim, start);
+	string ph6 = s.substr(start, end - start);
+
+	start = end + delim.length();
+	end = s.find(delim, start);
+	string arg2Val = s.substr(start, end - start);
+
+	return ServiceRequest(teamName, teamID, arg, arg1name, arg1Datatype, arg1Val,
+		arg2, arg2name, arg2Datatype, arg2Val);
 }
 
 HostInfo Server::initServer() {

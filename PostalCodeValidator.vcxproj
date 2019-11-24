@@ -162,10 +162,14 @@
     <ClInclude Include="constants.h" />
     <ClInclude Include="hostInfo.h" />
     <ClInclude Include="IniFile.h" />
+    <ClInclude Include="ResponseMessage.h" />
     <ClInclude Include="server.h" />
     <ClInclude Include="ServiceRequest.h" />
     <ClInclude Include="serviceUtils.h" />
     <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ResponseMessage.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
