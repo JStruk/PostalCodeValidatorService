@@ -12,15 +12,15 @@ class HostInfo {
 	
 public:
 	string IP;
-	int port;
+	string port;
 
-	HostInfo(string _IP, int _port) {
+	HostInfo(string _IP, string _port) {
 		IP = _IP;
 		port = _port;
 	}
 
 	HostInfo() {
 		IP = "127.0.0.1";
-		port = 27015;
+		port = "27015";
 	}
 };

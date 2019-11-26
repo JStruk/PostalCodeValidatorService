@@ -89,6 +89,7 @@ public:
 		}
 
 		msg += RSP_TAG;
+		msg += "|";
 		msg += "2";
 		msg += "|";
 		msg += "Special-Notes";

@@ -5,7 +5,7 @@
 #define TAG_NAME "POSTAL"
 #define SECURITY_LEVEL "2"
 #define SECURITY_LVL_STRING "3"
-#define SERVICE_NAME "POSTAL_CODE_VALIDATOR"
+#define SERVICE_NAME "PostalCodeValidator"
 #define DRC_TAG "DRC"
 #define SRV_TAG "SRV"
 #define ARG_TAG "ARG"

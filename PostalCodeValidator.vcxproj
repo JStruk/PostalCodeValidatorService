@@ -151,7 +151,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="client.cpp" />
     <ClCompile Include="IniFile.cpp" />
+    <ClCompile Include="Logger.cpp" />
     <ClCompile Include="PostalCodeValidator.cpp" />
     <ClCompile Include="server.cpp" />
     <ClCompile Include="ServiceRequest.cpp" />
@@ -159,9 +161,11 @@
     <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="client.h" />
     <ClInclude Include="constants.h" />
     <ClInclude Include="hostInfo.h" />
     <ClInclude Include="IniFile.h" />
+    <ClInclude Include="Logger.h" />
     <ClInclude Include="ResponseMessage.h" />
     <ClInclude Include="server.h" />
     <ClInclude Include="ServiceRequest.h" />

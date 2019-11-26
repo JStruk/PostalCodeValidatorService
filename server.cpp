@@ -385,7 +385,7 @@ HostInfo Server::getIP() {
 		struct in_addr addr;
 		memcpy(&addr, phe->h_addr_list[i], sizeof(struct in_addr));
 		cout << "Address " << i << ": " << inet_ntoa(addr) << endl << "Port is: " << DEFAULT_PORT << endl;
-		info = HostInfo(inet_ntoa(addr), 27015);
+		info = HostInfo(inet_ntoa(addr), "27015");
 	}
 	return info;
 }
