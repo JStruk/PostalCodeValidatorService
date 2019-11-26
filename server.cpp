@@ -30,6 +30,9 @@ void Server::processClientRequest(SOCKET clientsocket) {
 			//cout << "Parsing request" << endl;
 			ServiceRequest serviceRequest = parseRequest(s);
 
+			//log service request
+			logger.LogMessage(actions::RECEIVING_REQUEST, s);
+
 			if (serviceRequest.errorOccured) {
 				//Error occured when parsing the service request message, send error message to client
 				//Since the message has been setup an error has occured - let's build and send this reponse message!
@@ -50,21 +53,20 @@ void Server::processClientRequest(SOCKET clientsocket) {
 					closesocket(clientsocket);
 					WSACleanup();
 				}
-				printf("\n\nResponse Sent: %s\n\n", recvbuf);
-
 				//Sent response to client - continue to wait for next message or socket closure
+				logger.LogMessage(actions::RESPONDING_REQUEST, errorMsg);
 				continue;
 			}
 
 			//2. Verify Team and other tings
-			int isValidRequest = serviceRequest.Verify();
+			int isValidRequest = serviceRequest.Verify(registryIP, registryPort, ourTeamName, ourTeamID);
 
 			ResponseMessage responseMsg;
 
 			//If request is invalid return errorCode and errorMessage based on error
 			if (isValidRequest == 1) {
 				//Invalid Team
-				responseMsg = ResponseMessage(false, "-1", "Sorry – Team could not be verified with registry");
+				responseMsg = ResponseMessage(false, "-1", "Sorry - Team could not be verified with registry");
 			}
 			else if (isValidRequest == 2) {
 				//Invalid data type
@@ -100,7 +102,8 @@ void Server::processClientRequest(SOCKET clientsocket) {
 					//return 1;
 					// ****HANDLE ERROR HERE
 				}
-				printf("\n\nResponse Sent: %s\n\n", recvbuf);
+				//printf("\n\nResponse Sent: %s\n\n", recvbuf);
+				logger.LogMessage(actions::RESPONDING_REQUEST, errorMsg);
 
 				//Sent response to client - continue to wait for next message or socket closure
 				continue;
@@ -128,7 +131,8 @@ void Server::processClientRequest(SOCKET clientsocket) {
 				//return 1;
 				// ****HANDLE ERROR HERE
 			}
-			printf("\n\nResponse Sent: %s\n\n", recvbuf);
+			//printf("\n\nResponse Sent: %s\n\n", recvbuf);
+			logger.LogMessage(actions::RESPONDING_REQUEST, rMsg);
 
 			//build and send response message for SOA-OK
 
@@ -288,11 +292,18 @@ ServiceRequest Server::parseRequest(string s) {
 	end = s.find(delim, start);
 	string arg2Val = s.substr(start, end - start);
 
-	return ServiceRequest(teamName, teamID, arg, arg1name, arg1Datatype, arg1Val,
+	return ServiceRequest(teamName, teamID, serviceName, arg, arg1name, arg1Datatype, arg1Val,
 		arg2, arg2name, arg2Datatype, arg2Val);
 }
 
-HostInfo Server::initServer() {
+HostInfo Server::initServer(string _registryIP, string _registryPort, string _ourTeamName, string _ourTeamID) {
+	registryIP = _registryIP;
+	registryPort = _registryPort;
+	ourTeamID = _ourTeamID;
+	ourTeamName = _ourTeamName;
+
+	//init logger
+	logger = Logger();
 
 	// Initialize Winsock
 	iResult = WSAStartup(MAKEWORD(2, 2), &wsaData);
@@ -352,9 +363,9 @@ HostInfo Server::initServer() {
 	//Infinite loop - accept multiple clients and launch them to a handling thread
 	// Accept a client socket
 
-	cout << endl << endl << "Service Info:" << endl;
-	info = getIP();
-	cout << endl << endl;
+	//cout << endl << endl << "Service Info:" << endl;
+	//info = getIP();
+	//cout << endl << endl;
 
 	return info;
 }

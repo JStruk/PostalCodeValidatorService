@@ -1,5 +1,4 @@
-
-
+#pragma once
 
 #define WIN32_LEAN_AND_MEAN
 
@@ -21,7 +20,10 @@
 #define DEFAULT_BUFLEN 512
 #define DEFAULT_PORT "27015"
 
+#include "Logger.h"
+
 using namespace std;
+using namespace actions;
 
 class Client {
 
@@ -38,6 +40,8 @@ public:
 	char recvbuf[DEFAULT_BUFLEN];
 	int iResult;
 	int recvbuflen = DEFAULT_BUFLEN;
+
+	Logger logger;
 
 	void initClient(string ip, string port);
 	string sendMsgToRegistry(string msg);

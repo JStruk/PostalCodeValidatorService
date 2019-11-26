@@ -21,6 +21,7 @@
 #include "hostInfo.h"
 #include "ResponseMessage.h"
 #include "ServiceRequest.h"
+#include "Logger.h"
 
 // Need to link with Ws2_32.lib
 #pragma comment (lib, "Ws2_32.lib")
@@ -52,11 +53,18 @@ public:
 	int iSendResult;
 	char recvbuf[DEFAULT_BUFLEN];
 	int recvbuflen = DEFAULT_BUFLEN;
+
+	string registryIP;
+	string registryPort;
+	string ourTeamName;
+	string ourTeamID;
+
+	Logger logger;
 	
 	/*
 	Methods
 	*/
-	HostInfo initServer();
+	HostInfo initServer(string registryIP, string registryPort, string _ourTeamName, string _ourTeamID);
 	HostInfo getIP();
 	void listenForClients();
 	void processClientRequest(SOCKET clientsocket);

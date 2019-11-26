@@ -7,11 +7,13 @@
 #define SECURITY_LVL_STRING "3"
 #define SERVICE_NAME "PostalCodeValidator"
 #define DRC_TAG "DRC"
+#define INF_TAG "INF"
 #define SRV_TAG "SRV"
 #define ARG_TAG "ARG"
 #define RSP_TAG "RSP"
 #define MCH_TAG "MCH"
 #define PUB_TAG "PUB"
+#define QUERY_TEAM_TAG "QUERY-TEAM"
 #define SOA_OK "OK"
 #define SOA_NOT_OK "NOT-OK"
 #define PUBLISH_SERVICE_TAG "PUB-SERVICE"
@@ -24,3 +26,13 @@
 
 #define VALID_POSTAL_CODE "VALID"
 #define INVALID_POSTAL_CODE "NOT-VALID"
+
+namespace actions {
+	enum Action {
+		STARTING_SERVICE,
+		CALLING_REGISTRY,
+		REGISTRY_RESPONSE,
+		RECEIVING_REQUEST,
+		RESPONDING_REQUEST
+	};
+}

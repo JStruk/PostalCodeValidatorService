@@ -4,13 +4,16 @@
 using namespace std;
 
 //wombo constructor
-ServiceRequest::ServiceRequest(string _teamname, string _teamid,
+ServiceRequest::ServiceRequest(string _teamname, string _teamid, string _serviceName,
 	string _arg1, string _arg1name, string _arg1datatype, string _arg1val,
 	string _arg2, string _arg2name, string _arg2datatype, string _arg2val) {
 
 	//first line
 	teamName = _teamname;
 	teamID = _teamid;
+
+	//second line
+	serviceName = _serviceName;
 
 	//third line
 	ARG1 = _arg1;
@@ -43,7 +46,7 @@ void ServiceRequest::PrintRequest() {
 }
 
 ResponseMessage ServiceRequest::process() {
-	cout << "Processing Postal Code: " + arg1Value << " in region: " << arg2Value << endl;
+	//cout << "Processing Postal Code: " + arg1Value << " in region: " << arg2Value << endl;
 	string postalCode = arg1Value;
 	string regionCode = arg2Value;
 
@@ -175,7 +178,11 @@ ResponseMessage ServiceRequest::process() {
 			return r;
 		}
 		else {
-			if (postalCode.substr(0, 2) == "G0" || postalCode.substr(0, 2) == "H0" || postalCode.substr(0, 2) == "J0") {
+			if (postalCode == "H0H0H0") {
+				r = ResponseMessage(true, "Hi Santa Claus");
+				return r;
+			}
+			else if (postalCode.substr(0, 2) == "G0" || postalCode.substr(0, 2) == "H0" || postalCode.substr(0, 2) == "J0") {
 				r = ResponseMessage(true, "Rural Quebec");
 				return r;
 			}
@@ -183,10 +190,7 @@ ResponseMessage ServiceRequest::process() {
 				r = ResponseMessage(true, "Provincial Government");
 				return r;
 			}
-			else if (postalCode == "H0H0H0") {
-				r = ResponseMessage(true, "Hi Santa Claus");
-				return r;
-			}
+
 			else if (postalCode.substr(0, 1) == "G") {
 				r = ResponseMessage(true, "Eastern Quebec");
 				return r;
@@ -436,7 +440,7 @@ void ServiceRequest::buildReturnMsg() {
 
 }
 
-int ServiceRequest::Verify() {
+int ServiceRequest::Verify(string rIP, string rPort, string ourTeamName, string ourTeamID) {
 	// 0. Valid
 	// 1. Invalid team
 	// 2. invalid data type
@@ -444,21 +448,33 @@ int ServiceRequest::Verify() {
 	// 4. invalid argument
 
 	//Verify team
-	//Will need client here to call registry and verify team
+	Client c = Client();
+	c.initClient(rIP, rPort);
+	string response = c.sendMsgToRegistry(BuildVerifyTeamMsg(ourTeamName, ourTeamID));
+
+	string delim = "|";
+
+	auto start = 0U;
+	auto end = response.find(delim);
+	int count = 0;
+
+	string soa = response.substr(start, end - start);
+
+	start = end + delim.length();
+	end = response.find(delim, start);
+	string ok = response.substr(start, end - start);
+
+	if (ok != SOA_OK) {
+		return 1;
+	}
 
 
 	//Verify data types - make sure arg1Datatype and arg2Datatype are both strings
 
-	cout << "Verifying Arg1 Datatype: \n" << "Expected: string\n" << "Actual: " << arg1DataType << endl;
-
 	//arg1 needs to be a string and in the form "ANANAN"
 	//Region must be: NL, NS, NB, PE, QC, ON, MB, SK, AB, BC, YT, NT, NU
 
-	if (arg1DataType == "string") {
-		cout << "Valid" << endl;;
-	}
-	else {
-		cout << "Invalid" << endl;;
+	if (arg1DataType != "string") {
 		return 2;
 	}
 
@@ -469,30 +485,64 @@ int ServiceRequest::Verify() {
 	regex b(R"([A-Za-z]\d[A-Za-z]\d[A-Za-z]\d)");
 
 	if (!std::regex_match(arg1Value, b)) {
-		cout << "Invalid Postal Code" << endl;
+		//cout << "Invalid Postal Code" << endl;
 		return 4;
 	}
 
-	cout << endl << "Verifying Arg2 Datatype: \n " << "Expected: string\n" << "Actual: " << arg2DataType << endl;
+	//cout << endl << "Verifying Arg2 Datatype: \n " << "Expected: string\n" << "Actual: " << arg2DataType << endl;
 
-	if (arg2DataType == "string") {
-		cout << "Valid" << endl;
-	}
-	else {
-		cout << "Invalid" << endl;
+	if (arg2DataType != "string") {
 		return 2;
 	}
 
-	cout << "Verifying Arg2 Value: \n " << endl;
 	//Verify region code is one of the allowable values
 	string regionCodes[] = { "NL", "NS", "NB", "PE", "QC", "ON", "MB", "SK", "AB", "BC", "YT", "NT", "NU" };
 	string* found = std::find(regionCodes, std::end(regionCodes), arg2Value);
 	if (found == std::end(regionCodes))
 	{
-		cout << "Invalid Region Code" << endl;
 		return 4;
 	}
 
 	return 0;
+
+}
+
+string ServiceRequest::BuildVerifyTeamMsg(string ourTeamName, string ourTeamID) {
+
+	char startOfMsg = '\013\0';
+	char endOfMsg = '\034\0';
+	char endOfSegment = '\r\0';
+	char newLine = '\n';
+
+	string msg = "";
+
+	msg += startOfMsg;
+
+	msg += DRC_TAG;
+	msg += "|";
+	msg += QUERY_TEAM_TAG;
+	msg += "|";
+	msg += ourTeamName;
+	msg += "|";
+	msg += ourTeamID;
+	msg += "|";
+	msg += endOfSegment;
+	msg += newLine;
+
+	msg += INF_TAG;
+	msg += "|";
+	msg += teamName;
+	msg += "|";
+	msg += teamID;
+	msg += "|";
+	msg += serviceName;
+	msg += "|";
+	msg += endOfSegment;
+	msg += newLine;
+
+	msg += endOfMsg;
+	msg += newLine;
+
+	return msg;
 
 }

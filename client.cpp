@@ -2,9 +2,10 @@
 
 #include "client.h"
 
-
 void Client::initClient(string ip, string port) {
-	
+	//Initialize logger
+	logger = Logger();
+
 	// Initialize Winsock
 	iResult = WSAStartup(MAKEWORD(2, 2), &wsaData);
 	if (iResult != 0) {
@@ -77,7 +78,9 @@ string Client::sendMsgToRegistry(string msg) {
 		//return 1;
 	}
 
-	cout << endl << "Sent to registry: " << endl << msg << endl << endl;
+	//cout << endl << "Sent to registry: " << endl << msg << endl << endl;
+
+	logger.LogMessage(actions::CALLING_REGISTRY, msg);
 
 	// shutdown the connection since no more data will be sent
 	/*iResult = shutdown(ConnectSocket, SD_SEND);
@@ -90,14 +93,14 @@ string Client::sendMsgToRegistry(string msg) {
 
 	// Receive until the peer closes the connection
 	do {
-		cout << "Waiting for response from registry..." << endl;
+		//cout << "Waiting for response from registry..." << endl;
 		iResult = recv(ConnectSocket, recvbuf, recvbuflen, 0);
-
 
 		response = string(recvbuf);
 
 		if (iResult > 0) {
-			cout << endl << "Response: " << response << endl << endl;
+			//cout << endl << "Response: " << response << endl << endl;
+			logger.LogMessage(actions::REGISTRY_RESPONSE, response);
 			break;
 		}
 		else if (iResult == 0)

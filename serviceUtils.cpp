@@ -38,7 +38,7 @@ string ServiceUtils::registerTeam(string IP, string port) {
 
 	//cout << "Registering team with: " << msg << endl << endl;
 
-	cout << msg << endl;
+	//cout << msg << endl;
 
 	Client c = Client();
 	c.initClient(IP, port);
@@ -78,7 +78,11 @@ int ServiceUtils::registerService(string IP, string port, string teamName, strin
 
 	msg += startOfMsg;
 
-	msg += "DRC|PUB-SERVICE|BOSS|1186|";
+	msg += "DRC|PUB-SERVICE|";
+	msg += teamName;
+	msg += "|";
+	msg += teamID;
+	msg += "|";
 	msg += endOfSegment;
 	msg += newLine;
 
@@ -187,7 +191,7 @@ int ServiceUtils::registerService(string IP, string port, string teamName, strin
 		end = response.find(delim, start);
 		string errorCode = response.substr(start, end - start);
 
-		cout << "Error code: " << errorCode << endl;
+		//cout << "Error code: " << errorCode << endl;
 
 		return -1;
 	}

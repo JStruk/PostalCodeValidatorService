@@ -7,6 +7,7 @@
 #include <regex>
 
 #include "ResponseMessage.h"
+#include "client.h"
 
 using namespace std;
 
@@ -16,6 +17,9 @@ public:
 	//first line
 	string teamName;
 	string teamID;
+
+	//second line
+	string serviceName;
 
 	//third line
 	string ARG1;
@@ -33,7 +37,7 @@ public:
 	bool errorOccured = false;
 	ResponseMessage responseMessage;
 
-	ServiceRequest(string _teamname, string _teamid,
+	ServiceRequest(string _teamname, string _teamid, string serviceName,
 		string _arg1, string _arg1name, string _arg1datatype, string _arg1val,
 		string _arg2, string _arg2name, string _arg2datatype, string _arg2val);
 
@@ -48,7 +52,9 @@ public:
 
 	void buildReturnMsg();
 
-	int Verify();
+	int Verify(string registryIP, string registryPort, string teamName, string teamID);
+
+	string BuildVerifyTeamMsg(string ourTeamName, string ourTeamID);
 };
 
 
