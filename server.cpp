@@ -1,4 +1,10 @@
-
+/* FILE         : server.cpp
+* PROJECT       : SOA_A1
+* PROGRAMMER    : Justin Struk
+* FIRST VERSION : 2019-11-28
+* DESCRIPTION   : Contains function logic for the Server class
+*
+*/
 #include "server.h"
 
 //Some of this code from here -> https://docs.microsoft.com/en-us/windows/win32/winsock/complete-server-code

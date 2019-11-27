@@ -1,3 +1,10 @@
+/* FILE         : ResponseMessage.h
+* PROJECT       : SOA_A1
+* PROGRAMMER    : Justin Struk
+* FIRST VERSION : 2019-11-28
+* DESCRIPTION   : Header file for the ResponseMessage class
+*
+*/
 #pragma once
 #include <string>
 #include "constants.h"

@@ -1,3 +1,10 @@
+/* FILE         : ServiceUtils.h
+* PROJECT       : SOA_A1
+* PROGRAMMER    : Justin Struk
+* FIRST VERSION : 2019-11-28
+* DESCRIPTION   : header file for the service utils class
+*
+*/
 #pragma once
 
 #include <iostream>

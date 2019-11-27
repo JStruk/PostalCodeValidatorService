@@ -1,3 +1,16 @@
+/* FILE         : client.h
+* PROJECT       : SOA_A1
+* PROGRAMMER    : Justin Struk
+* FIRST VERSION : 2019-11-28
+* DESCRIPTION   : Header file for the client class. Contains class definition, dependencies and constants
+*
+*/
+
+/*  NAME    : Client
+*   PURPOSE : A TCP/IP client that may be used to connect to a server (registry), send a message, and get a response.
+				This client is intended for a single use. I.e. init the client and call SendMessagetoRegistry one time only
+*/
+
 #pragma once
 
 #define WIN32_LEAN_AND_MEAN

@@ -1,3 +1,15 @@
+/* FILE         : CIniFile
+* PROJECT       : SOA_A1
+* PROGRAMMER    : Justin Struk
+* FIRST VERSION : 2019-11-28
+* DESCRIPTION   : Class for managing *.ini configuration files
+*	Code from here -> https://www.codeproject.com/Articles/8342/CIniFile-Class-for-C-A-robust-cross-platform-INI-f
+*/
+
+/*  NAME    : CIniFile
+*   PURPOSE : Managing *.ini configuration files
+*/
+
 #pragma once
 #include <string>
 #include <vector>

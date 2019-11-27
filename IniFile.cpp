@@ -1,3 +1,12 @@
+/* FILE         : IniFile.cpp
+* PROJECT       : SOA_A1
+* PROGRAMMER    : Justin Struk
+* FIRST VERSION : 2019-11-28
+* DESCRIPTION   : c++ library for reading .ini configuration files. This code is from the link belowe
+*                 https://www.codeproject.com/Articles/8342/CIniFile-Class-for-C-A-robust-cross-platform-INI-f
+*/
+
+
 #include "StdAfx.h"
 #include ".\inifile.h"
 

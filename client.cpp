@@ -1,4 +1,10 @@
-
+/* FILE         : client.cpp
+* PROJECT       : SOA_A1
+* PROGRAMMER    : Justin Struk
+* FIRST VERSION : 2019-11-28
+* DESCRIPTION   : Contains function logic for the client class
+*
+*/
 
 #include "client.h"
 

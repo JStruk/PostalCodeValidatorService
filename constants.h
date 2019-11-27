@@ -1,3 +1,10 @@
+/* FILE         : constants.h
+* PROJECT       : SOA_A1
+* PROGRAMMER    : Justin Struk
+* FIRST VERSION : 2019-11-28
+* DESCRIPTION   : contains all the constants used throughout the application
+*
+*/
 #pragma once
 
 #include <stdio.h>
@@ -19,7 +26,7 @@
 #define PUBLISH_SERVICE_TAG "PUB-SERVICE"
 #define NUM_ARGS "2"
 #define NUM_RSP "2"
-#define DESCRIPTION "Given a postal code and region, determins if the postal code is valid"
+#define DESCRIPTION "Given a postal code and region, determines if the postal code is valid"
 #define RSP_NAME "totalPayValue"
 #define SERVICE_IP "<ServiceIP>"
 #define SERVICE_PORT "<ServicePort>"

@@ -1,3 +1,14 @@
+/* FILE         : hostInfo.h
+* PROJECT       : SOA_A1
+* PROGRAMMER    : Justin Struk
+* FIRST VERSION : 2019-11-28
+* DESCRIPTION   : header file for the HostInfo class.
+*
+*/
+
+/*  NAME    : HostInfo
+*   PURPOSE : Contains information about the host server for this service (IP and PORT)
+*/
 
 #include <stdlib.h>
 #include <stdio.h>

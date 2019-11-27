@@ -1,3 +1,10 @@
+/* FILE         : serviceUtils.cpp
+* PROJECT       : SOA_A1
+* PROGRAMMER    : Justin Struk
+* FIRST VERSION : 2019-11-28
+* DESCRIPTION   : Contains function logic for the ServiceUtils class
+*
+*/
 
 #include "serviceUtils.h"
 #include "constants.h"

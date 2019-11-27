@@ -1,4 +1,10 @@
-
+/* FILE         : ServiceRequest.h
+* PROJECT       : SOA_A1
+* PROGRAMMER    : Justin Struk
+* FIRST VERSION : 2019-11-28
+* DESCRIPTION   : contains function logic for the ServiceRequest class
+*
+*/
 #include "ServiceRequest.h"
 
 using namespace std;

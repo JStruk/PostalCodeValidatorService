@@ -1,3 +1,10 @@
+/* FILE         : server.h
+* PROJECT       : SOA_A1
+* PROGRAMMER    : Justin Struk
+* FIRST VERSION : 2019-11-28
+* DESCRIPTION   : Header file for the server class
+*
+*/
 //Some of this code from here -> https://docs.microsoft.com/en-us/windows/win32/winsock/complete-server-code
 
 
