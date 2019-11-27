@@ -54,8 +54,9 @@ void Client::initClient(string ip, string port) {
 	freeaddrinfo(result);
 
 	if (ConnectSocket == INVALID_SOCKET) {
-		printf("Unable to connect to server!\n");
+		printf("Unable to connect to server here!\n");
 		WSACleanup();
+		
 		//return 1;
 		//handle error here
 	}

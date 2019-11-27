@@ -26,6 +26,8 @@ void Server::processClientRequest(SOCKET clientsocket) {
 			string s = string(msg);
 			//remove any spaces from the message before parsing
 			s.erase(remove(s.begin(), s.end(), ' '), s.end());
+			s.erase(remove(s.begin(), s.end(), '\013'), s.end());
+			s.erase(remove(s.begin(), s.end(), '\034'), s.end());
 
 			//cout << "Parsing request" << endl;
 			ServiceRequest serviceRequest = parseRequest(s);
@@ -172,6 +174,9 @@ ServiceRequest Server::parseRequest(string s) {
 
 	string drc = s.substr(start, end - start);
 
+	drc.erase(remove(drc.begin(), drc.end(), '\r'), drc.end());
+	drc.erase(remove(drc.begin(), drc.end(), '\n'), drc.end());
+
 	if (drc != "DRC") {
 		//Invalid message
 		ResponseMessage r = ResponseMessage(false, "-1", "Invalid EXEC-SERVICE request");
@@ -182,6 +187,9 @@ ServiceRequest Server::parseRequest(string s) {
 	start = end + delim.length();
 	end = s.find(delim, start);
 	string exec = s.substr(start, end - start);
+
+	exec.erase(remove(exec.begin(), exec.end(), '\r'), exec.end());
+	exec.erase(remove(exec.begin(), exec.end(), '\n'), exec.end());
 
 	if (exec != "EXEC-SERVICE") {
 		ResponseMessage r = ResponseMessage(false, "-1", "Invalid EXEC-SERVICE request");
@@ -200,6 +208,9 @@ ServiceRequest Server::parseRequest(string s) {
 	start = end + delim.length();
 	end = s.find(delim, start);
 	string srv = s.substr(start, end - start);
+
+	srv.erase(remove(srv.begin(), srv.end(), '\r'), srv.end());
+	srv.erase(remove(srv.begin(), srv.end(), '\n'), srv.end());
 
 	if (srv != "SRV") {
 		cout << "invalid Request - SRV";
@@ -235,6 +246,8 @@ ServiceRequest Server::parseRequest(string s) {
 	end = s.find(delim, start);
 	string arg = s.substr(start, end - start);
 
+	arg.erase(remove(arg.begin(), arg.end(), '\r'), arg.end());
+	arg.erase(remove(arg.begin(), arg.end(), '\n'), arg.end());
 	if (arg != "ARG") {
 		cout << "Invalid Request - ARG" << endl;
 		ResponseMessage r = ResponseMessage(false, "-1", "Invalid EXEC-SERVICE request");
@@ -266,6 +279,8 @@ ServiceRequest Server::parseRequest(string s) {
 	end = s.find(delim, start);
 	string arg2 = s.substr(start, end - start);
 
+	arg2.erase(remove(arg2.begin(), arg2.end(), '\r'), arg2.end());
+	arg2.erase(remove(arg2.begin(), arg2.end(), '\n'), arg2.end());
 	if (arg2 != "ARG") {
 		cout << "Invalid Request - ARG" << endl;
 		ResponseMessage r = ResponseMessage(false, "-1", "Invalid EXEC-SERVICE request");
@@ -296,9 +311,12 @@ ServiceRequest Server::parseRequest(string s) {
 		arg2, arg2name, arg2Datatype, arg2Val);
 }
 
-HostInfo Server::initServer(string _registryIP, string _registryPort, string _ourTeamName, string _ourTeamID) {
+void Server::setRegistryInfo(string _registryIP, string _registryPort) {
 	registryIP = _registryIP;
 	registryPort = _registryPort;
+}
+
+HostInfo Server::initServer(string _ourTeamName, string _ourTeamID) {
 	ourTeamID = _ourTeamID;
 	ourTeamName = _ourTeamName;
 
@@ -364,7 +382,7 @@ HostInfo Server::initServer(string _registryIP, string _registryPort, string _ou
 	// Accept a client socket
 
 	//cout << endl << endl << "Service Info:" << endl;
-	//info = getIP();
+	info = getIP();
 	//cout << endl << endl;
 
 	return info;

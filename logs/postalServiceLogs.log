@@ -174,3 +174,750 @@
 2019-11-26 14:10:53 Responding to service request : 
 2019-11-26 14:10:53 	 >> PUB|NOT-OK|-1|Invalid EXEC-SERVICE request||
 2019-11-26 14:10:53 ---
+2019-11-26 19:18:25 ============================================================
+2019-11-26 19:18:25 Team	: BOSS (Justin S, Nate D, Spencer B, Harley B)
+2019-11-26 19:18:25 Tag-Name	: POSTAL
+2019-11-26 19:18:25 Service	: PostalCodeValidator
+2019-11-26 19:18:25 ============================================================
+2019-11-26 19:18:25 ---
+2019-11-26 19:18:25 Calling SOA-Registry with message : 
+2019-11-26 19:18:25 	 >> DRC|REG-TEAM|||
+2019-11-26 19:18:25 	 >> INF|BOSS|||
+2019-11-26 19:18:25 	 >> 
+2019-11-26 19:18:25 	 >> Response from SOA-Registry : 
+2019-11-26 19:18:25 		 >> SOA|OK|1186|||
+2019-11-26 19:18:25 ---
+2019-11-26 19:18:25 Calling SOA-Registry with message : 
+2019-11-26 19:18:25 	 >> DRC|PUB-SERVICE|BOSS|1186|
+2019-11-26 19:18:25 	 >> SRV|POSTAL|PostalCodeValidator|2|2|2|Given a postal code and region, determins if the postal code is valid|
+2019-11-26 19:18:25 	 >> ARG|1|postalCode|string|mandatory|
+2019-11-26 19:18:25 	 >> ARG|2|REGION|string|mandatory|
+2019-11-26 19:18:25 	 >> RSP|1|isPostalCodeValid|string|
+2019-11-26 19:18:25 	 >> RSP|2|specialNotes|string|
+2019-11-26 19:18:25 	 >> MCH|127.0.0.1|3128|
+2019-11-26 19:18:25 	 >> 
+2019-11-26 19:18:25 	 >> Response from SOA-Registry : 
+2019-11-26 19:18:25 		 >> SOA|NOT-OK|-4|Team 'BOSS' (ID : 1186) has already published service POSTAL|
+2019-11-26 19:18:25 ---
+2019-11-26 19:25:45 ============================================================
+2019-11-26 19:25:45 Team	: BOSS (Justin S, Nate D, Spencer B, Harley B)
+2019-11-26 19:25:45 Tag-Name	: POSTAL
+2019-11-26 19:25:45 Service	: PostalCodeValidator
+2019-11-26 19:25:45 ============================================================
+2019-11-26 19:25:45 ---
+2019-11-26 19:25:45 Calling SOA-Registry with message : 
+2019-11-26 19:25:45 	 >> DRC|REG-TEAM|||
+2019-11-26 19:25:45 	 >> INF|BOSS|||
+2019-11-26 19:25:45 	 >> 
+2019-11-26 19:25:46 	 >> Response from SOA-Registry : 
+2019-11-26 19:25:46 		 >> SOA|OK|1186|||
+2019-11-26 19:25:46 ---
+2019-11-26 19:25:46 Calling SOA-Registry with message : 
+2019-11-26 19:25:46 	 >> DRC|PUB-SERVICE|BOSS|1186|
+2019-11-26 19:25:46 	 >> SRV|POSTAL|PostalCodeValidator|2|2|2|Given a postal code and region, determins if the postal code is valid|
+2019-11-26 19:25:46 	 >> ARG|1|postalCode|string|mandatory|
+2019-11-26 19:25:46 	 >> ARG|2|REGION|string|mandatory|
+2019-11-26 19:25:46 	 >> RSP|1|isPostalCodeValid|string|
+2019-11-26 19:25:46 	 >> RSP|2|specialNotes|string|
+2019-11-26 19:25:46 	 >> MCH|192.168.0.38|27015|
+2019-11-26 19:25:46 	 >> 
+2019-11-26 19:25:46 	 >> Response from SOA-Registry : 
+2019-11-26 19:25:46 		 >> SOA|NOT-OK|-4|Team 'BOSS' (ID : 1186) has already published service POSTAL|
+2019-11-26 19:25:46 ---
+2019-11-26 19:27:14 ============================================================
+2019-11-26 19:27:14 Team	: BOSS (Justin S, Nate D, Spencer B, Harley B)
+2019-11-26 19:27:14 Tag-Name	: POSTAL
+2019-11-26 19:27:14 Service	: PostalCodeValidator
+2019-11-26 19:27:14 ============================================================
+2019-11-26 19:27:14 ---
+2019-11-26 19:27:14 Calling SOA-Registry with message : 
+2019-11-26 19:27:14 	 >> DRC|REG-TEAM|||
+2019-11-26 19:27:14 	 >> INF|BOSS|||
+2019-11-26 19:27:14 	 >> 
+2019-11-26 19:27:14 	 >> Response from SOA-Registry : 
+2019-11-26 19:27:14 		 >> SOA|OK|1186|||
+2019-11-26 19:27:14 ---
+2019-11-26 19:27:14 Calling SOA-Registry with message : 
+2019-11-26 19:27:14 	 >> DRC|PUB-SERVICE|BOSS|1186|
+2019-11-26 19:27:14 	 >> SRV|POSTAL|PostalCodeValidator|2|2|2|Given a postal code and region, determins if the postal code is valid|
+2019-11-26 19:27:14 	 >> ARG|1|postalCode|string|mandatory|
+2019-11-26 19:27:14 	 >> ARG|2|REGION|string|mandatory|
+2019-11-26 19:27:15 	 >> RSP|1|isPostalCodeValid|string|
+2019-11-26 19:27:15 	 >> RSP|2|specialNotes|string|
+2019-11-26 19:27:15 	 >> MCH|192.168.0.38|27015|
+2019-11-26 19:27:15 	 >> 
+2019-11-26 19:27:15 	 >> Response from SOA-Registry : 
+2019-11-26 19:27:15 		 >> SOA|OK||||
+2019-11-26 19:27:15 ---
+2019-11-26 19:27:34 Receiving service request : 
+2019-11-26 19:27:34 	 >> DRC|EXEC-SERVICE|BOSS|1186|
+2019-11-26 19:27:34 	 >> SRV||PostalCodeValidator||2|||
+2019-11-26 19:27:34 	 >> ARG|1|postalCode|STRING||N2N1Y4|
+2019-11-26 19:27:34 	 >> ARG|1|postalCode|STRING||N2N1Y4|
+2019-11-26 19:27:34 	 >> 
+2019-11-26 19:27:34 ---
+2019-11-26 19:27:34 Responding to service request : 
+2019-11-26 19:27:34 	 >> PUB|NOT-OK|-1|Invalid EXEC-SERVICE request||
+2019-11-26 19:27:34 ---
+2019-11-26 19:28:04 Receiving service request : 
+2019-11-26 19:28:04 	 >> DRC|EXEC-SERVICE|BOSS|1186|
+2019-11-26 19:28:04 	 >> SRV||PostalCodeValidator||2|||
+2019-11-26 19:28:04 	 >> ARG|1|postalCode|STRING||N2N1Y4|
+2019-11-26 19:28:04 	 >> ARG|2|REGION|STRING||ON|
+2019-11-26 19:28:04 	 >> 
+2019-11-26 19:28:04 ---
+2019-11-26 19:28:04 Responding to service request : 
+2019-11-26 19:28:04 	 >> PUB|NOT-OK|-1|Invalid EXEC-SERVICE request||
+2019-11-26 19:28:04 ---
+2019-11-26 19:31:18 ============================================================
+2019-11-26 19:31:18 Team	: BOSS (Justin S, Nate D, Spencer B, Harley B)
+2019-11-26 19:31:18 Tag-Name	: POSTAL
+2019-11-26 19:31:18 Service	: PostalCodeValidator
+2019-11-26 19:31:18 ============================================================
+2019-11-26 19:31:18 ---
+2019-11-26 19:31:18 Calling SOA-Registry with message : 
+2019-11-26 19:31:18 	 >> DRC|REG-TEAM|||
+2019-11-26 19:31:18 	 >> INF|BOSS|||
+2019-11-26 19:31:18 	 >> 
+2019-11-26 19:31:18 	 >> Response from SOA-Registry : 
+2019-11-26 19:31:18 		 >> SOA|OK|1186|||
+2019-11-26 19:31:18 ---
+2019-11-26 19:31:18 Calling SOA-Registry with message : 
+2019-11-26 19:31:18 	 >> DRC|PUB-SERVICE|BOSS|1186|
+2019-11-26 19:31:18 	 >> SRV|POSTAL|PostalCodeValidator|2|2|2|Given a postal code and region, determins if the postal code is valid|
+2019-11-26 19:31:18 	 >> ARG|1|postalCode|string|mandatory|
+2019-11-26 19:31:18 	 >> ARG|2|REGION|string|mandatory|
+2019-11-26 19:31:18 	 >> RSP|1|isPostalCodeValid|string|
+2019-11-26 19:31:18 	 >> RSP|2|specialNotes|string|
+2019-11-26 19:31:18 	 >> MCH|192.168.0.38|27015|
+2019-11-26 19:31:18 	 >> 
+2019-11-26 19:31:18 	 >> Response from SOA-Registry : 
+2019-11-26 19:31:18 		 >> SOA|NOT-OK|-4|Team 'BOSS' (ID : 1186) has already published service POSTAL|
+2019-11-26 19:31:18 ---
+2019-11-26 19:31:28 Receiving service request : 
+2019-11-26 19:31:28 	 >> DRC|EXEC-SERVICE|BOSS|1186|
+2019-11-26 19:31:28 	 >> SRV||PostalCodeValidator||2|||
+2019-11-26 19:31:28 	 >> ARG|1|postalCode|STRING||N2N1Y4|
+2019-11-26 19:31:28 	 >> ARG|2|REGION|STRING||ON|
+2019-11-26 19:31:28 	 >> 
+2019-11-26 19:31:28 ---
+2019-11-26 19:31:28 Responding to service request : 
+2019-11-26 19:31:28 	 >> PUB|NOT-OK|-1|Invalid EXEC-SERVICE request||
+2019-11-26 19:31:28 ---
+2019-11-26 19:32:09 ============================================================
+2019-11-26 19:32:09 Team	: BOSS (Justin S, Nate D, Spencer B, Harley B)
+2019-11-26 19:32:09 Tag-Name	: POSTAL
+2019-11-26 19:32:09 Service	: PostalCodeValidator
+2019-11-26 19:32:09 ============================================================
+2019-11-26 19:32:09 ---
+2019-11-26 19:32:09 Calling SOA-Registry with message : 
+2019-11-26 19:32:09 	 >> DRC|REG-TEAM|||
+2019-11-26 19:32:09 	 >> INF|BOSS|||
+2019-11-26 19:32:09 	 >> 
+2019-11-26 19:32:09 	 >> Response from SOA-Registry : 
+2019-11-26 19:32:09 		 >> SOA|OK|1186|||
+2019-11-26 19:32:09 ---
+2019-11-26 19:32:09 Calling SOA-Registry with message : 
+2019-11-26 19:32:09 	 >> DRC|PUB-SERVICE|BOSS|1186|
+2019-11-26 19:32:10 	 >> SRV|POSTAL|PostalCodeValidator|2|2|2|Given a postal code and region, determins if the postal code is valid|
+2019-11-26 19:32:10 	 >> ARG|1|postalCode|string|mandatory|
+2019-11-26 19:32:10 	 >> ARG|2|REGION|string|mandatory|
+2019-11-26 19:32:10 	 >> RSP|1|isPostalCodeValid|string|
+2019-11-26 19:32:10 	 >> RSP|2|specialNotes|string|
+2019-11-26 19:32:10 	 >> MCH|192.168.0.38|27015|
+2019-11-26 19:32:10 	 >> 
+2019-11-26 19:32:10 	 >> Response from SOA-Registry : 
+2019-11-26 19:32:10 		 >> SOA|NOT-OK|-4|Team 'BOSS' (ID : 1186) has already published service POSTAL|
+2019-11-26 19:32:10 ---
+2019-11-26 19:35:43 ============================================================
+2019-11-26 19:35:43 Team	: BOSS (Justin S, Nate D, Spencer B, Harley B)
+2019-11-26 19:35:43 Tag-Name	: POSTAL
+2019-11-26 19:35:43 Service	: PostalCodeValidator
+2019-11-26 19:35:43 ============================================================
+2019-11-26 19:35:43 ---
+2019-11-26 19:35:43 Calling SOA-Registry with message : 
+2019-11-26 19:35:43 	 >> DRC|REG-TEAM|||
+2019-11-26 19:35:43 	 >> INF|BOSS|||
+2019-11-26 19:35:43 	 >> 
+2019-11-26 19:35:44 	 >> Response from SOA-Registry : 
+2019-11-26 19:35:44 		 >> SOA|OK|1186|||
+2019-11-26 19:35:44 ---
+2019-11-26 19:35:44 Calling SOA-Registry with message : 
+2019-11-26 19:35:44 	 >> DRC|PUB-SERVICE|BOSS|1186|
+2019-11-26 19:35:44 	 >> SRV|POSTAL|PostalCodeValidator|2|2|2|Given a postal code and region, determins if the postal code is valid|
+2019-11-26 19:35:44 	 >> ARG|1|postalCode|string|mandatory|
+2019-11-26 19:35:44 	 >> ARG|2|REGION|string|mandatory|
+2019-11-26 19:35:44 	 >> RSP|1|isPostalCodeValid|string|
+2019-11-26 19:35:44 	 >> RSP|2|specialNotes|string|
+2019-11-26 19:35:44 	 >> MCH|192.168.0.38|27015|
+2019-11-26 19:35:44 	 >> 
+2019-11-26 19:35:44 	 >> Response from SOA-Registry : 
+2019-11-26 19:35:44 		 >> SOA|NOT-OK|-4|Team 'BOSS' (ID : 1186) has already published service POSTAL|
+2019-11-26 19:35:44 ---
+2019-11-26 19:36:52 Receiving service request : 
+2019-11-26 19:36:52 	 >> DRC|EXEC-SERVICE|BOSS|1186|SRV||PostalCodeValidator||2|||ARG|1|postalCode|STRING||N2N1Y4|ARG|2|REGION|STRING||ON|
+2019-11-26 19:36:52 ---
+2019-11-26 19:36:53 Calling SOA-Registry with message : 
+2019-11-26 19:36:53 	 >> DRC|QUERY-TEAM|BOSS|1186|
+2019-11-26 19:36:53 	 >> INF|BOSS|1186|PostalCodeValidator|
+2019-11-26 19:36:53 	 >> 
+2019-11-26 19:36:53 Responding to service request : 
+2019-11-26 19:36:53 	 >> PUB|NOT-OK|-1|Sorry - Team could not be verified with registry||
+2019-11-26 19:36:53 ---
+2019-11-26 19:37:03 ============================================================
+2019-11-26 19:37:03 Team	: BOSS (Justin S, Nate D, Spencer B, Harley B)
+2019-11-26 19:37:03 Tag-Name	: POSTAL
+2019-11-26 19:37:03 Service	: PostalCodeValidator
+2019-11-26 19:37:03 ============================================================
+2019-11-26 19:37:03 ---
+2019-11-26 19:37:03 Calling SOA-Registry with message : 
+2019-11-26 19:37:03 	 >> DRC|REG-TEAM|||
+2019-11-26 19:37:03 	 >> INF|BOSS|||
+2019-11-26 19:37:03 	 >> 
+2019-11-26 19:37:04 	 >> Response from SOA-Registry : 
+2019-11-26 19:37:04 		 >> SOA|OK|1186|||
+2019-11-26 19:37:04 ---
+2019-11-26 19:37:04 Calling SOA-Registry with message : 
+2019-11-26 19:37:04 	 >> DRC|PUB-SERVICE|BOSS|1186|
+2019-11-26 19:37:04 	 >> SRV|POSTAL|PostalCodeValidator|2|2|2|Given a postal code and region, determins if the postal code is valid|
+2019-11-26 19:37:04 	 >> ARG|1|postalCode|string|mandatory|
+2019-11-26 19:37:04 	 >> ARG|2|REGION|string|mandatory|
+2019-11-26 19:37:04 	 >> RSP|1|isPostalCodeValid|string|
+2019-11-26 19:37:04 	 >> RSP|2|specialNotes|string|
+2019-11-26 19:37:04 	 >> MCH|192.168.0.38|27015|
+2019-11-26 19:37:04 	 >> 
+2019-11-26 19:37:04 	 >> Response from SOA-Registry : 
+2019-11-26 19:37:04 		 >> SOA|NOT-OK|-4|Team 'BOSS' (ID : 1186) has already published service POSTAL|
+2019-11-26 19:37:04 ---
+2019-11-26 19:37:19 Receiving service request : 
+2019-11-26 19:37:19 	 >> DRC|EXEC-SERVICE|BOSS|1186|SRV||PostalCodeValidator||2|||ARG|1|postalCode|STRING||N2N1Y4|ARG|2|REGION|STRING||ON|
+2019-11-26 19:37:19 ---
+2019-11-26 19:37:19 Calling SOA-Registry with message : 
+2019-11-26 19:37:19 	 >> DRC|QUERY-TEAM|BOSS|1186|
+2019-11-26 19:37:19 	 >> INF|BOSS|1186|PostalCodeValidator|
+2019-11-26 19:37:19 	 >> 
+2019-11-26 19:37:19 Responding to service request : 
+2019-11-26 19:37:19 	 >> PUB|NOT-OK|-1|Sorry - Team could not be verified with registry||
+2019-11-26 19:37:19 ---
+2019-11-26 19:38:52 ============================================================
+2019-11-26 19:38:52 Team	: BOSS (Justin S, Nate D, Spencer B, Harley B)
+2019-11-26 19:38:52 Tag-Name	: POSTAL
+2019-11-26 19:38:52 Service	: PostalCodeValidator
+2019-11-26 19:38:52 ============================================================
+2019-11-26 19:38:52 ---
+2019-11-26 19:38:52 Calling SOA-Registry with message : 
+2019-11-26 19:38:52 	 >> DRC|REG-TEAM|||
+2019-11-26 19:38:52 	 >> INF|BOSS|||
+2019-11-26 19:38:52 	 >> 
+2019-11-26 19:38:52 	 >> Response from SOA-Registry : 
+2019-11-26 19:38:53 		 >> SOA|OK|1186|||
+2019-11-26 19:38:53 ---
+2019-11-26 19:38:53 Calling SOA-Registry with message : 
+2019-11-26 19:38:53 	 >> DRC|PUB-SERVICE|BOSS|1186|
+2019-11-26 19:38:53 	 >> SRV|POSTAL|PostalCodeValidator|2|2|2|Given a postal code and region, determins if the postal code is valid|
+2019-11-26 19:38:53 	 >> ARG|1|postalCode|string|mandatory|
+2019-11-26 19:38:53 	 >> ARG|2|REGION|string|mandatory|
+2019-11-26 19:38:53 	 >> RSP|1|isPostalCodeValid|string|
+2019-11-26 19:38:53 	 >> RSP|2|specialNotes|string|
+2019-11-26 19:38:53 	 >> MCH|192.168.0.38|27015|
+2019-11-26 19:38:53 	 >> 
+2019-11-26 19:38:53 	 >> Response from SOA-Registry : 
+2019-11-26 19:38:53 		 >> SOA|NOT-OK|-4|Team 'BOSS' (ID : 1186) has already published service POSTAL|
+2019-11-26 19:38:53 ---
+2019-11-26 19:39:03 Receiving service request : 
+2019-11-26 19:39:03 	 >> DRC|EXEC-SERVICE|BOSS|1186|
+2019-11-26 19:39:03 	 >> SRV||PostalCodeValidator||2|||
+2019-11-26 19:39:03 	 >> ARG|1|postalCode|STRING||N2N1Y4|
+2019-11-26 19:39:03 	 >> ARG|2|REGION|STRING||ON|
+2019-11-26 19:39:03 	 >> 
+2019-11-26 19:39:03 ---
+2019-11-26 19:39:03 Calling SOA-Registry with message : 
+2019-11-26 19:39:03 	 >> DRC|QUERY-TEAM|BOSS|1186|
+2019-11-26 19:39:04 	 >> INF|BOSS|1186|PostalCodeValidator|
+2019-11-26 19:39:04 	 >> 
+2019-11-26 19:39:04 Responding to service request : 
+2019-11-26 19:39:04 	 >> PUB|NOT-OK|-1|Sorry - Team could not be verified with registry||
+2019-11-26 19:39:04 ---
+2019-11-26 19:40:26 ============================================================
+2019-11-26 19:40:26 Team	: BOSS (Justin S, Nate D, Spencer B, Harley B)
+2019-11-26 19:40:26 Tag-Name	: POSTAL
+2019-11-26 19:40:26 Service	: PostalCodeValidator
+2019-11-26 19:40:26 ============================================================
+2019-11-26 19:40:26 ---
+2019-11-26 19:40:26 Calling SOA-Registry with message : 
+2019-11-26 19:40:26 	 >> DRC|REG-TEAM|||
+2019-11-26 19:40:26 	 >> INF|BOSS|||
+2019-11-26 19:40:26 	 >> 
+2019-11-26 19:40:27 	 >> Response from SOA-Registry : 
+2019-11-26 19:40:27 		 >> SOA|OK|1186|||
+2019-11-26 19:40:27 ---
+2019-11-26 19:40:27 Calling SOA-Registry with message : 
+2019-11-26 19:40:27 	 >> DRC|PUB-SERVICE|BOSS|1186|
+2019-11-26 19:40:27 	 >> SRV|POSTAL|PostalCodeValidator|2|2|2|Given a postal code and region, determins if the postal code is valid|
+2019-11-26 19:40:27 	 >> ARG|1|postalCode|string|mandatory|
+2019-11-26 19:40:27 	 >> ARG|2|REGION|string|mandatory|
+2019-11-26 19:40:27 	 >> RSP|1|isPostalCodeValid|string|
+2019-11-26 19:40:27 	 >> RSP|2|specialNotes|string|
+2019-11-26 19:40:27 	 >> MCH|192.168.0.38|27015|
+2019-11-26 19:40:27 	 >> 
+2019-11-26 19:40:27 	 >> Response from SOA-Registry : 
+2019-11-26 19:40:27 		 >> SOA|NOT-OK|-4|Team 'BOSS' (ID : 1186) has already published service POSTAL|
+2019-11-26 19:40:27 ---
+2019-11-26 19:40:38 Receiving service request : 
+2019-11-26 19:40:38 	 >> DRC|EXEC-SERVICE|BOSS|1186|
+2019-11-26 19:40:38 	 >> SRV||PostalCodeValidator||2|||
+2019-11-26 19:40:38 	 >> ARG|1|postalCode|STRING||N2N1Y4|
+2019-11-26 19:40:38 	 >> ARG|2|REGION|STRING||ON|
+2019-11-26 19:40:38 	 >> 
+2019-11-26 19:40:38 ---
+2019-11-26 19:40:38 Calling SOA-Registry with message : 
+2019-11-26 19:40:38 	 >> DRC|QUERY-TEAM|BOSS|1186|
+2019-11-26 19:40:38 	 >> INF|BOSS|1186|PostalCodeValidator|
+2019-11-26 19:40:38 	 >> 
+2019-11-26 19:40:38 Responding to service request : 
+2019-11-26 19:40:38 	 >> PUB|NOT-OK|-1|Sorry - Team could not be verified with registry||
+2019-11-26 19:40:38 ---
+2019-11-26 19:41:57 ============================================================
+2019-11-26 19:41:57 Team	: BOSS (Justin S, Nate D, Spencer B, Harley B)
+2019-11-26 19:41:57 Tag-Name	: POSTAL
+2019-11-26 19:41:57 Service	: PostalCodeValidator
+2019-11-26 19:41:57 ============================================================
+2019-11-26 19:41:57 ---
+2019-11-26 19:41:57 Calling SOA-Registry with message : 
+2019-11-26 19:41:57 	 >> DRC|REG-TEAM|||
+2019-11-26 19:41:57 	 >> INF|BOSS|||
+2019-11-26 19:41:57 	 >> 
+2019-11-26 19:41:58 Calling SOA-Registry with message : 
+2019-11-26 19:41:58 	 >> DRC|PUB-SERVICE|BOSS|Error! Couldn't Register Team|
+2019-11-26 19:41:58 	 >> SRV|POSTAL|PostalCodeValidator|2|2|2|Given a postal code and region, determins if the postal code is valid|
+2019-11-26 19:41:58 	 >> ARG|1|postalCode|string|mandatory|
+2019-11-26 19:41:58 	 >> ARG|2|REGION|string|mandatory|
+2019-11-26 19:41:58 	 >> RSP|1|isPostalCodeValid|string|
+2019-11-26 19:41:58 	 >> RSP|2|specialNotes|string|
+2019-11-26 19:41:58 	 >> MCH|192.168.0.38|27015|
+2019-11-26 19:41:58 	 >> 
+2019-11-26 19:41:58 	 >> Response from SOA-Registry : 
+2019-11-26 19:41:58 		 >> SOA|NOT-OK|-5|Error executing SQL=[select teamID from Team where teamID=Error! Couldn't Register Team and teamName='BOSS';] - error=[Incorrect syntax near '!'.]|
+2019-11-26 19:41:58 ---
+2019-11-26 19:42:03 Receiving service request : 
+2019-11-26 19:42:03 	 >> DRC|EXEC-SERVICE|BOSS|1186|
+2019-11-26 19:42:03 	 >> SRV||PostalCodeValidator||2|||
+2019-11-26 19:42:04 	 >> ARG|1|postalCode|STRING||N2N1Y4|
+2019-11-26 19:42:04 	 >> ARG|2|REGION|STRING||ON|
+2019-11-26 19:42:04 	 >> 
+2019-11-26 19:42:04 ---
+2019-11-26 19:42:04 Calling SOA-Registry with message : 
+2019-11-26 19:42:04 	 >> DRC|QUERY-TEAM|BOSS|Error! Couldn't Register Team|
+2019-11-26 19:42:04 	 >> INF|BOSS|1186|PostalCodeValidator|
+2019-11-26 19:42:04 	 >> 
+2019-11-26 19:42:22 ============================================================
+2019-11-26 19:42:22 Team	: BOSS (Justin S, Nate D, Spencer B, Harley B)
+2019-11-26 19:42:22 Tag-Name	: POSTAL
+2019-11-26 19:42:22 Service	: PostalCodeValidator
+2019-11-26 19:42:22 ============================================================
+2019-11-26 19:42:22 ---
+2019-11-26 19:42:22 Calling SOA-Registry with message : 
+2019-11-26 19:42:22 	 >> DRC|REG-TEAM|||
+2019-11-26 19:42:22 	 >> INF|BOSS|||
+2019-11-26 19:42:22 	 >> 
+2019-11-26 19:42:23 	 >> Response from SOA-Registry : 
+2019-11-26 19:42:23 		 >> SOA|OK|1186|||
+2019-11-26 19:42:23 ---
+2019-11-26 19:42:23 Calling SOA-Registry with message : 
+2019-11-26 19:42:23 	 >> DRC|PUB-SERVICE|BOSS|1186|
+2019-11-26 19:42:23 	 >> SRV|POSTAL|PostalCodeValidator|2|2|2|Given a postal code and region, determins if the postal code is valid|
+2019-11-26 19:42:23 	 >> ARG|1|postalCode|string|mandatory|
+2019-11-26 19:42:23 	 >> ARG|2|REGION|string|mandatory|
+2019-11-26 19:42:23 	 >> RSP|1|isPostalCodeValid|string|
+2019-11-26 19:42:23 	 >> RSP|2|specialNotes|string|
+2019-11-26 19:42:23 	 >> MCH|192.168.0.38|27015|
+2019-11-26 19:42:23 	 >> 
+2019-11-26 19:42:23 	 >> Response from SOA-Registry : 
+2019-11-26 19:42:23 		 >> SOA|NOT-OK|-4|Team 'BOSS' (ID : 1186) has already published service POSTAL|
+2019-11-26 19:42:23 ---
+2019-11-26 19:42:40 Receiving service request : 
+2019-11-26 19:42:40 	 >> DRC|EXEC-SERVICE|BOSS|1186|
+2019-11-26 19:42:40 	 >> SRV||PostalCodeValidator||2|||
+2019-11-26 19:42:40 	 >> ARG|1|postalCode|STRING||N2N1Y4|
+2019-11-26 19:42:40 	 >> ARG|2|REGION|STRING||ON|
+2019-11-26 19:42:40 	 >> 
+2019-11-26 19:42:40 ---
+2019-11-26 19:43:07 Calling SOA-Registry with message : 
+2019-11-26 19:43:07 	 >> DRC|QUERY-TEAM|BOSS|1186|
+2019-11-26 19:43:07 	 >> INF|BOSS|1186|PostalCodeValidator|
+2019-11-26 19:43:07 	 >> 
+2019-11-26 19:43:07 Responding to service request : 
+2019-11-26 19:43:07 	 >> PUB|NOT-OK|-1|Sorry - Team could not be verified with registry||
+2019-11-26 19:43:07 ---
+2019-11-26 19:44:49 ============================================================
+2019-11-26 19:44:49 Team	: BOSS (Justin S, Nate D, Spencer B, Harley B)
+2019-11-26 19:44:49 Tag-Name	: POSTAL
+2019-11-26 19:44:49 Service	: PostalCodeValidator
+2019-11-26 19:44:49 ============================================================
+2019-11-26 19:44:49 ---
+2019-11-26 19:44:59 Calling SOA-Registry with message : 
+2019-11-26 19:44:59 	 >> DRC|REG-TEAM|||
+2019-11-26 19:44:59 	 >> INF|BOSS|||
+2019-11-26 19:44:59 	 >> 
+2019-11-26 19:44:59 	 >> Response from SOA-Registry : 
+2019-11-26 19:44:59 		 >> SOA|OK|1186|||
+2019-11-26 19:44:59 ---
+2019-11-26 19:44:59 Calling SOA-Registry with message : 
+2019-11-26 19:44:59 	 >> DRC|PUB-SERVICE|BOSS|1186|
+2019-11-26 19:44:59 	 >> SRV|POSTAL|PostalCodeValidator|2|2|2|Given a postal code and region, determins if the postal code is valid|
+2019-11-26 19:44:59 	 >> ARG|1|postalCode|string|mandatory|
+2019-11-26 19:44:59 	 >> ARG|2|REGION|string|mandatory|
+2019-11-26 19:44:59 	 >> RSP|1|isPostalCodeValid|string|
+2019-11-26 19:44:59 	 >> RSP|2|specialNotes|string|
+2019-11-26 19:44:59 	 >> MCH|192.168.0.38|27015|
+2019-11-26 19:44:59 	 >> 
+2019-11-26 19:44:59 	 >> Response from SOA-Registry : 
+2019-11-26 19:44:59 		 >> SOA|NOT-OK|-4|Team 'BOSS' (ID : 1186) has already published service POSTAL|
+2019-11-26 19:44:59 ---
+2019-11-26 19:45:02 Receiving service request : 
+2019-11-26 19:45:02 	 >> DRC|EXEC-SERVICE|BOSS|1186|
+2019-11-26 19:45:02 	 >> SRV||PostalCodeValidator||2|||
+2019-11-26 19:45:02 	 >> ARG|1|postalCode|STRING||N2N1Y4|
+2019-11-26 19:45:02 	 >> ARG|2|REGION|STRING||ON|
+2019-11-26 19:45:02 	 >> 
+2019-11-26 19:45:02 ---
+2019-11-26 19:45:02 Calling SOA-Registry with message : 
+2019-11-26 19:45:03 	 >> DRC|QUERY-TEAM|BOSS|1186|
+2019-11-26 19:45:03 	 >> INF|BOSS|1186|PostalCodeValidator|
+2019-11-26 19:45:03 	 >> 
+2019-11-26 19:45:03 Responding to service request : 
+2019-11-26 19:45:03 	 >> PUB|NOT-OK|-1|Sorry - Team could not be verified with registry||
+2019-11-26 19:45:04 ---
+2019-11-26 19:46:44 ============================================================
+2019-11-26 19:46:44 Team	: BOSS (Justin S, Nate D, Spencer B, Harley B)
+2019-11-26 19:46:44 Tag-Name	: POSTAL
+2019-11-26 19:46:44 Service	: PostalCodeValidator
+2019-11-26 19:46:44 ============================================================
+2019-11-26 19:46:44 ---
+2019-11-26 19:46:44 Calling SOA-Registry with message : 
+2019-11-26 19:46:44 	 >> DRC|REG-TEAM|||
+2019-11-26 19:46:44 	 >> INF|BOSS|||
+2019-11-26 19:46:44 	 >> 
+2019-11-26 19:46:45 	 >> Response from SOA-Registry : 
+2019-11-26 19:46:45 		 >> SOA|OK|1186|||
+2019-11-26 19:46:45 ---
+2019-11-26 19:46:45 Calling SOA-Registry with message : 
+2019-11-26 19:46:45 	 >> DRC|PUB-SERVICE|BOSS|1186|
+2019-11-26 19:46:45 	 >> SRV|POSTAL|PostalCodeValidator|2|2|2|Given a postal code and region, determins if the postal code is valid|
+2019-11-26 19:46:45 	 >> ARG|1|postalCode|string|mandatory|
+2019-11-26 19:46:45 	 >> ARG|2|REGION|string|mandatory|
+2019-11-26 19:46:45 	 >> RSP|1|isPostalCodeValid|string|
+2019-11-26 19:46:45 	 >> RSP|2|specialNotes|string|
+2019-11-26 19:46:45 	 >> MCH|192.168.0.38|27015|
+2019-11-26 19:46:45 	 >> 
+2019-11-26 19:46:45 	 >> Response from SOA-Registry : 
+2019-11-26 19:46:45 		 >> SOA|NOT-OK|-4|Team 'BOSS' (ID : 1186) has already published service POSTAL|
+2019-11-26 19:46:45 ---
+2019-11-26 19:46:53 Receiving service request : 
+2019-11-26 19:46:53 	 >> DRC|EXEC-SERVICE|BOSS|1186|
+2019-11-26 19:46:53 	 >> SRV||PostalCodeValidator||2|||
+2019-11-26 19:46:53 	 >> ARG|1|postalCode|STRING||N2N1Y4|
+2019-11-26 19:46:53 	 >> ARG|2|REGION|STRING||ON|
+2019-11-26 19:46:54 	 >> 
+2019-11-26 19:46:54 ---
+2019-11-26 19:46:54 Calling SOA-Registry with message : 
+2019-11-26 19:46:54 	 >> DRC|QUERY-TEAM|BOSS|1186|
+2019-11-26 19:46:54 	 >> INF|BOSS|1186|PostalCodeValidator|
+2019-11-26 19:46:54 	 >> 
+2019-11-26 19:46:54 	 >> Response from SOA-Registry : 
+2019-11-26 19:46:54 		 >> SOA|NOT-OK|-4|Team 'BOSS' (ID : 1186) does not have service PostalCodeValidator registered in DBase|
+2019-11-26 19:46:54 ---
+2019-11-26 19:46:54 Responding to service request : 
+2019-11-26 19:46:54 	 >> PUB|NOT-OK|-1|Sorry - Team could not be verified with registry||
+2019-11-26 19:46:54 ---
+2019-11-26 19:48:47 ============================================================
+2019-11-26 19:48:47 Team	: BOSS (Justin S, Nate D, Spencer B, Harley B)
+2019-11-26 19:48:47 Tag-Name	: POSTAL
+2019-11-26 19:48:47 Service	: PostalCodeValidator
+2019-11-26 19:48:47 ============================================================
+2019-11-26 19:48:47 ---
+2019-11-26 19:48:47 Calling SOA-Registry with message : 
+2019-11-26 19:48:47 	 >> DRC|REG-TEAM|||
+2019-11-26 19:48:47 	 >> INF|BOSS|||
+2019-11-26 19:48:47 	 >> 
+2019-11-26 19:48:47 	 >> Response from SOA-Registry : 
+2019-11-26 19:48:47 		 >> SOA|OK|1186|||
+2019-11-26 19:48:47 ---
+2019-11-26 19:48:48 Calling SOA-Registry with message : 
+2019-11-26 19:48:48 	 >> DRC|PUB-SERVICE|BOSS|1186|
+2019-11-26 19:48:48 	 >> SRV|POSTAL|PostalCodeValidator|2|2|2|Given a postal code and region, determins if the postal code is valid|
+2019-11-26 19:48:48 	 >> ARG|1|postalCode|string|mandatory|
+2019-11-26 19:48:48 	 >> ARG|2|REGION|string|mandatory|
+2019-11-26 19:48:48 	 >> RSP|1|isPostalCodeValid|string|
+2019-11-26 19:48:48 	 >> RSP|2|specialNotes|string|
+2019-11-26 19:48:48 	 >> MCH|192.168.0.38|27015|
+2019-11-26 19:48:48 	 >> 
+2019-11-26 19:48:48 	 >> Response from SOA-Registry : 
+2019-11-26 19:48:48 		 >> SOA|NOT-OK|-4|Team 'BOSS' (ID : 1186) has already published service POSTAL|
+2019-11-26 19:48:48 ---
+2019-11-26 19:48:50 Receiving service request : 
+2019-11-26 19:48:50 	 >> DRC|EXEC-SERVICE|BOSS|1186|
+2019-11-26 19:48:50 	 >> SRV||PostalCodeValidator||2|||
+2019-11-26 19:48:50 	 >> ARG|1|postalCode|STRING||N2N1Y4|
+2019-11-26 19:48:50 	 >> ARG|2|REGION|STRING||ON|
+2019-11-26 19:48:50 	 >> 
+2019-11-26 19:48:50 ---
+2019-11-26 19:48:50 Calling SOA-Registry with message : 
+2019-11-26 19:48:50 	 >> DRC|QUERY-TEAM|BOSS|1186|
+2019-11-26 19:48:50 	 >> INF|BOSS|1186|POSTAL|
+2019-11-26 19:48:50 	 >> 
+2019-11-26 19:48:50 	 >> Response from SOA-Registry : 
+2019-11-26 19:48:50 		 >> SOA|OK||||
+2019-11-26 19:48:50 ---
+2019-11-26 19:48:50 Responding to service request : 
+2019-11-26 19:48:50 	 >> PUB|NOT-OK|-2|Invalid Argument Data Type||
+2019-11-26 19:48:50 ---
+2019-11-26 19:48:59 Receiving service request : 
+2019-11-26 19:48:59 	 >> DRC|EXEC-SERVICE|BOSS|1186|
+2019-11-26 19:48:59 	 >> SRV||PostalCodeValidator||2|||
+2019-11-26 19:48:59 	 >> ARG|1|postalCode|STRING||N2N1Y4|
+2019-11-26 19:48:59 	 >> ARG|2|REGION|STRING||ON|
+2019-11-26 19:48:59 	 >> 
+2019-11-26 19:48:59 ---
+2019-11-26 19:48:59 Calling SOA-Registry with message : 
+2019-11-26 19:48:59 	 >> DRC|QUERY-TEAM|BOSS|1186|
+2019-11-26 19:48:59 	 >> INF|BOSS|1186|POSTAL|
+2019-11-26 19:48:59 	 >> 
+2019-11-26 19:48:59 	 >> Response from SOA-Registry : 
+2019-11-26 19:48:59 		 >> SOA|OK||||
+2019-11-26 19:48:59 ---
+2019-11-26 19:48:59 Responding to service request : 
+2019-11-26 19:48:59 	 >> PUB|NOT-OK|-2|Invalid Argument Data Type||
+2019-11-26 19:48:59 ---
+2019-11-26 19:54:35 ============================================================
+2019-11-26 19:54:35 Team	: BOSS (Justin S, Nate D, Spencer B, Harley B)
+2019-11-26 19:54:35 Tag-Name	: POSTAL
+2019-11-26 19:54:35 Service	: PostalCodeValidator
+2019-11-26 19:54:35 ============================================================
+2019-11-26 19:54:35 ---
+2019-11-26 19:54:35 Calling SOA-Registry with message : 
+2019-11-26 19:54:35 	 >> DRC|REG-TEAM|||
+2019-11-26 19:54:35 	 >> INF|BOSS|||
+2019-11-26 19:54:35 	 >> 
+2019-11-26 19:54:36 	 >> Response from SOA-Registry : 
+2019-11-26 19:54:36 		 >> SOA|OK|1186|||
+2019-11-26 19:54:36 ---
+2019-11-26 19:54:36 Calling SOA-Registry with message : 
+2019-11-26 19:54:36 	 >> DRC|PUB-SERVICE|BOSS|1186|
+2019-11-26 19:54:36 	 >> SRV|POSTAL|PostalCodeValidator|2|2|2|Given a postal code and region, determins if the postal code is valid|
+2019-11-26 19:54:36 	 >> ARG|1|postalCode|string|mandatory|
+2019-11-26 19:54:36 	 >> ARG|2|REGION|string|mandatory|
+2019-11-26 19:54:36 	 >> RSP|1|isPostalCodeValid|string|
+2019-11-26 19:54:36 	 >> RSP|2|specialNotes|string|
+2019-11-26 19:54:36 	 >> MCH|192.168.0.38|27015|
+2019-11-26 19:54:36 	 >> 
+2019-11-26 19:54:36 	 >> Response from SOA-Registry : 
+2019-11-26 19:54:36 		 >> SOA|NOT-OK|-4|Team 'BOSS' (ID : 1186) has already published service POSTAL|
+2019-11-26 19:54:36 ---
+2019-11-26 19:54:51 Receiving service request : 
+2019-11-26 19:54:51 	 >> DRC|EXEC-SERVICE|BOSS|1186|
+2019-11-26 19:54:51 	 >> SRV||PostalCodeValidator||2|||
+2019-11-26 19:54:51 	 >> ARG|1|postalCode|STRING||N2N1T4|
+2019-11-26 19:54:51 	 >> ARG|2|REGION|STRING||ON|
+2019-11-26 19:54:51 	 >> 
+2019-11-26 19:54:51 ---
+2019-11-26 19:54:51 Calling SOA-Registry with message : 
+2019-11-26 19:54:51 	 >> DRC|QUERY-TEAM|BOSS|1186|
+2019-11-26 19:54:51 	 >> INF|BOSS|1186|POSTAL|
+2019-11-26 19:54:51 	 >> 
+2019-11-26 19:54:51 	 >> Response from SOA-Registry : 
+2019-11-26 19:54:51 		 >> SOA|OK||||
+2019-11-26 19:54:51 ---
+2019-11-26 19:54:51 Responding to service request : 
+2019-11-26 19:54:51 	 >> PUB|NOT-OK|-2|Invalid Argument Data Type||
+2019-11-26 19:54:51 ---
+2019-11-26 19:55:08 Receiving service request : 
+2019-11-26 19:55:08 	 >> DRC|EXEC-SERVICE|BOSS|1186|
+2019-11-26 19:55:08 	 >> SRV||PostalCodeValidator||2|||
+2019-11-26 19:55:08 	 >> ARG|1|postalCode|STRING||N2N1T4|
+2019-11-26 19:55:08 	 >> ARG|2|REGION|STRING||ON|
+2019-11-26 19:55:08 	 >> 
+2019-11-26 19:55:08 ---
+2019-11-26 19:55:08 Calling SOA-Registry with message : 
+2019-11-26 19:55:08 	 >> DRC|QUERY-TEAM|BOSS|1186|
+2019-11-26 19:55:08 	 >> INF|BOSS|1186|POSTAL|
+2019-11-26 19:55:08 	 >> 
+2019-11-26 19:55:09 	 >> Response from SOA-Registry : 
+2019-11-26 19:55:09 		 >> SOA|OK||||
+2019-11-26 19:55:09 ---
+2019-11-26 19:56:26 ============================================================
+2019-11-26 19:56:26 Team	: BOSS (Justin S, Nate D, Spencer B, Harley B)
+2019-11-26 19:56:26 Tag-Name	: POSTAL
+2019-11-26 19:56:26 Service	: PostalCodeValidator
+2019-11-26 19:56:26 ============================================================
+2019-11-26 19:56:26 ---
+2019-11-26 19:56:27 Calling SOA-Registry with message : 
+2019-11-26 19:56:27 	 >> DRC|REG-TEAM|||
+2019-11-26 19:56:27 	 >> INF|BOSS|||
+2019-11-26 19:56:27 	 >> 
+2019-11-26 19:56:27 	 >> Response from SOA-Registry : 
+2019-11-26 19:56:27 		 >> SOA|OK|1186|||
+2019-11-26 19:56:27 ---
+2019-11-26 19:56:27 Calling SOA-Registry with message : 
+2019-11-26 19:56:27 	 >> DRC|PUB-SERVICE|BOSS|1186|
+2019-11-26 19:56:27 	 >> SRV|POSTAL|PostalCodeValidator|2|2|2|Given a postal code and region, determins if the postal code is valid|
+2019-11-26 19:56:27 	 >> ARG|1|postalCode|string|mandatory|
+2019-11-26 19:56:27 	 >> ARG|2|REGION|string|mandatory|
+2019-11-26 19:56:27 	 >> RSP|1|isPostalCodeValid|string|
+2019-11-26 19:56:27 	 >> RSP|2|specialNotes|string|
+2019-11-26 19:56:27 	 >> MCH|192.168.0.38|27015|
+2019-11-26 19:56:27 	 >> 
+2019-11-26 19:56:28 	 >> Response from SOA-Registry : 
+2019-11-26 19:56:28 		 >> SOA|NOT-OK|-4|Team 'BOSS' (ID : 1186) has already published service POSTAL|
+2019-11-26 19:56:28 ---
+2019-11-26 19:56:29 Receiving service request : 
+2019-11-26 19:56:29 	 >> DRC|EXEC-SERVICE|BOSS|1186|
+2019-11-26 19:56:29 	 >> SRV||PostalCodeValidator||2|||
+2019-11-26 19:56:29 	 >> ARG|1|postalCode|STRING||N2N1T4|
+2019-11-26 19:56:29 	 >> ARG|2|REGION|STRING||ON|
+2019-11-26 19:56:29 	 >> 
+2019-11-26 19:56:29 ---
+2019-11-26 19:56:29 Calling SOA-Registry with message : 
+2019-11-26 19:56:29 	 >> DRC|QUERY-TEAM|BOSS|1186|
+2019-11-26 19:56:29 	 >> INF|BOSS|1186|POSTAL|
+2019-11-26 19:56:29 	 >> 
+2019-11-26 19:56:29 	 >> Response from SOA-Registry : 
+2019-11-26 19:56:29 		 >> SOA|OK||||
+2019-11-26 19:56:29 ---
+2019-11-26 19:56:35 Responding to service request : 
+2019-11-26 19:56:35 	 >> PUB|OK|||2|
+2019-11-26 19:56:35 	 >> RSP|1|Postal-Code-Valid|string|VALID|
+2019-11-26 19:56:35 	 >> RSP|2|Special-Notes|string|Western Ontario|
+2019-11-26 19:56:35 ---
+2019-11-26 19:56:46 Receiving service request : 
+2019-11-26 19:56:46 	 >> DRC|EXEC-SERVICE|BOSS|1186|
+2019-11-26 19:56:46 	 >> SRV||PostalCodeValidator||2|||
+2019-11-26 19:56:46 	 >> ARG|1|postalCode|STRING||N2N1T4|
+2019-11-26 19:56:46 	 >> ARG|2|REGION|STRING||ON|
+2019-11-26 19:56:46 	 >> 
+2019-11-26 19:56:46 ---
+2019-11-26 19:56:46 Calling SOA-Registry with message : 
+2019-11-26 19:56:46 	 >> DRC|QUERY-TEAM|BOSS|1186|
+2019-11-26 19:56:46 	 >> INF|BOSS|1186|POSTAL|
+2019-11-26 19:56:46 	 >> 
+2019-11-26 19:56:46 	 >> Response from SOA-Registry : 
+2019-11-26 19:56:46 		 >> SOA|OK||||
+2019-11-26 19:56:46 ---
+2019-11-26 19:56:46 Responding to service request : 
+2019-11-26 19:56:46 	 >> PUB|OK|||2|
+2019-11-26 19:56:46 	 >> RSP|1|Postal-Code-Valid|string|VALID|
+2019-11-26 19:56:46 	 >> RSP|2|Special-Notes|string|Western Ontario|
+2019-11-26 19:56:46 ---
+2019-11-26 19:57:23 ============================================================
+2019-11-26 19:57:23 Team	: BOSS (Justin S, Nate D, Spencer B, Harley B)
+2019-11-26 19:57:23 Tag-Name	: POSTAL
+2019-11-26 19:57:23 Service	: PostalCodeValidator
+2019-11-26 19:57:23 ============================================================
+2019-11-26 19:57:23 ---
+2019-11-26 19:57:23 Calling SOA-Registry with message : 
+2019-11-26 19:57:23 	 >> DRC|REG-TEAM|||
+2019-11-26 19:57:24 	 >> INF|BOSS|||
+2019-11-26 19:57:24 	 >> 
+2019-11-26 19:57:24 	 >> Response from SOA-Registry : 
+2019-11-26 19:57:24 		 >> SOA|OK|1186|||
+2019-11-26 19:57:24 ---
+2019-11-26 19:57:24 Calling SOA-Registry with message : 
+2019-11-26 19:57:24 	 >> DRC|PUB-SERVICE|BOSS|1186|
+2019-11-26 19:57:24 	 >> SRV|POSTAL|PostalCodeValidator|2|2|2|Given a postal code and region, determins if the postal code is valid|
+2019-11-26 19:57:24 	 >> ARG|1|postalCode|string|mandatory|
+2019-11-26 19:57:24 	 >> ARG|2|REGION|string|mandatory|
+2019-11-26 19:57:24 	 >> RSP|1|isPostalCodeValid|string|
+2019-11-26 19:57:24 	 >> RSP|2|specialNotes|string|
+2019-11-26 19:57:24 	 >> MCH|192.168.0.38|27015|
+2019-11-26 19:57:24 	 >> 
+2019-11-26 19:57:24 	 >> Response from SOA-Registry : 
+2019-11-26 19:57:24 		 >> SOA|NOT-OK|-4|Team 'BOSS' (ID : 1186) has already published service POSTAL|
+2019-11-26 19:57:24 ---
+2019-11-26 19:57:38 Receiving service request : 
+2019-11-26 19:57:38 	 >> DRC|EXEC-SERVICE|BOSS|1186|
+2019-11-26 19:57:38 	 >> SRV||PostalCodeValidator||2|||
+2019-11-26 19:57:39 	 >> ARG|1|postalCode|STRING||N2N1Y4|
+2019-11-26 19:57:39 	 >> ARG|2|REGION|STRING||ON|
+2019-11-26 19:57:39 	 >> 
+2019-11-26 19:57:39 ---
+2019-11-26 19:57:39 Calling SOA-Registry with message : 
+2019-11-26 19:57:39 	 >> DRC|QUERY-TEAM|BOSS|1186|
+2019-11-26 19:57:39 	 >> INF|BOSS|1186|POSTAL|
+2019-11-26 19:57:39 	 >> 
+2019-11-26 19:57:39 	 >> Response from SOA-Registry : 
+2019-11-26 19:57:39 		 >> SOA|OK||||
+2019-11-26 19:57:39 ---
+2019-11-26 19:57:39 Responding to service request : 
+2019-11-26 19:57:39 	 >> PUB|OK|||2|
+2019-11-26 19:57:39 	 >> RSP|1|Postal-Code-Valid|string|VALID|
+2019-11-26 19:57:39 	 >> RSP|2|Special-Notes|string|Western Ontario|
+2019-11-26 19:57:39 ---
+2019-11-26 20:11:03 ============================================================
+2019-11-26 20:11:03 Team	: BOSS (Justin S, Nate D, Spencer B, Harley B)
+2019-11-26 20:11:03 Tag-Name	: POSTAL
+2019-11-26 20:11:03 Service	: PostalCodeValidator
+2019-11-26 20:11:03 ============================================================
+2019-11-26 20:11:03 ---
+2019-11-26 20:11:03 Calling SOA-Registry with message : 
+2019-11-26 20:11:03 	 >> DRC|REG-TEAM|||
+2019-11-26 20:11:03 	 >> INF|BOSS|||
+2019-11-26 20:11:04 	 >> 
+2019-11-26 20:11:04 	 >> Response from SOA-Registry : 
+2019-11-26 20:11:04 		 >> SOA|OK|1186|||
+2019-11-26 20:11:04 ---
+2019-11-26 20:11:04 Calling SOA-Registry with message : 
+2019-11-26 20:11:04 	 >> DRC|PUB-SERVICE|BOSS|1186|
+2019-11-26 20:11:04 	 >> SRV|POSTAL|PostalCodeValidator|2|2|2|Given a postal code and region, determins if the postal code is valid|
+2019-11-26 20:11:04 	 >> ARG|1|postalCode|string|mandatory|
+2019-11-26 20:11:04 	 >> ARG|2|REGION|string|mandatory|
+2019-11-26 20:11:04 	 >> RSP|1|isPostalCodeValid|string|
+2019-11-26 20:11:04 	 >> RSP|2|specialNotes|string|
+2019-11-26 20:11:04 	 >> MCH|192.168.0.38|27015|
+2019-11-26 20:11:04 	 >> 
+2019-11-26 20:11:04 	 >> Response from SOA-Registry : 
+2019-11-26 20:11:04 		 >> SOA|NOT-OK|-4|Team 'BOSS' (ID : 1186) has already published service POSTAL|
+2019-11-26 20:11:04 ---
+2019-11-26 20:11:13 ============================================================
+2019-11-26 20:11:13 Team	: BOSS (Justin S, Nate D, Spencer B, Harley B)
+2019-11-26 20:11:13 Tag-Name	: POSTAL
+2019-11-26 20:11:13 Service	: PostalCodeValidator
+2019-11-26 20:11:13 ============================================================
+2019-11-26 20:11:13 ---
+2019-11-26 20:11:13 Calling SOA-Registry with message : 
+2019-11-26 20:11:13 	 >> DRC|REG-TEAM|||
+2019-11-26 20:11:13 	 >> INF|BOSS|||
+2019-11-26 20:11:13 	 >> 
+2019-11-26 20:11:13 	 >> Response from SOA-Registry : 
+2019-11-26 20:11:13 		 >> SOA|OK|1186|||
+2019-11-26 20:11:13 ---
+2019-11-26 20:11:13 Calling SOA-Registry with message : 
+2019-11-26 20:11:13 	 >> DRC|PUB-SERVICE|BOSS|1186|
+2019-11-26 20:11:13 	 >> SRV|POSTAL|PostalCodeValidator|2|2|2|Given a postal code and region, determins if the postal code is valid|
+2019-11-26 20:11:13 	 >> ARG|1|postalCode|string|mandatory|
+2019-11-26 20:11:13 	 >> ARG|2|REGION|string|mandatory|
+2019-11-26 20:11:13 	 >> RSP|1|isPostalCodeValid|string|
+2019-11-26 20:11:13 	 >> RSP|2|specialNotes|string|
+2019-11-26 20:11:13 	 >> MCH|192.168.0.38|27015|
+2019-11-26 20:11:13 	 >> 
+2019-11-26 20:11:13 	 >> Response from SOA-Registry : 
+2019-11-26 20:11:13 		 >> SOA|NOT-OK|-4|Team 'BOSS' (ID : 1186) has already published service POSTAL|
+2019-11-26 20:11:13 ---
+2019-11-26 20:11:52 Receiving service request : 
+2019-11-26 20:11:52 	 >> DRC|EXEC-SERVICE|BOSS|1186|
+2019-11-26 20:11:52 	 >> SRV||PostalCodeValidator||2|||
+2019-11-26 20:11:52 	 >> ARG|1|postalCode|STRING||N2N1Y4|
+2019-11-26 20:11:52 	 >> ARG|2|REGION|STRING||ON|
+2019-11-26 20:11:52 	 >> 
+2019-11-26 20:11:52 ---
+2019-11-26 20:11:52 Calling SOA-Registry with message : 
+2019-11-26 20:11:52 	 >> DRC|QUERY-TEAM|BOSS|1186|
+2019-11-26 20:11:52 	 >> INF|BOSS|1186|POSTAL|
+2019-11-26 20:11:52 	 >> 
+2019-11-26 20:11:52 	 >> Response from SOA-Registry : 
+2019-11-26 20:11:52 		 >> SOA|OK||||
+2019-11-26 20:11:52 ---
+2019-11-26 20:11:52 Responding to service request : 
+2019-11-26 20:11:52 	 >> PUB|OK|||2|
+2019-11-26 20:11:52 	 >> RSP|1|Postal-Code-Valid|string|VALID|
+2019-11-26 20:11:52 	 >> RSP|2|Special-Notes|string|Western Ontario|
+2019-11-26 20:11:52 ---

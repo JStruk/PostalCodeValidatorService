@@ -5,6 +5,8 @@
 #include <stdlib.h>
 #include <iostream>
 #include <regex>
+#include <algorithm>
+#include <cctype>
 
 #include "ResponseMessage.h"
 #include "client.h"

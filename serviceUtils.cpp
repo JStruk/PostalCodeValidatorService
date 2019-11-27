@@ -67,7 +67,7 @@ string ServiceUtils::registerTeam(string IP, string port) {
 	return teamID;
 }
 
-int ServiceUtils::registerService(string IP, string port, string teamName, string teamID) {
+int ServiceUtils::registerService(string registryIP, string registryport, string serviceIP, string servicePort, string teamName, string teamID) {
 	char startOfMsg = '\013\0';
 	char endOfMsg = '\034\0';
 	char endOfSegment = '\r\0';
@@ -159,9 +159,9 @@ int ServiceUtils::registerService(string IP, string port, string teamName, strin
 	//MCH line
 	msg += MCH_TAG;
 	msg += "|";
-	msg += IP;
+	msg += serviceIP;
 	msg += "|";
-	msg += port;
+	msg += servicePort;
 	msg += "|";
 	msg += endOfSegment;
 	msg += newLine;
@@ -170,7 +170,7 @@ int ServiceUtils::registerService(string IP, string port, string teamName, strin
 	msg += newLine;
 
 	Client c = Client();
-	c.initClient(IP, port);
+	c.initClient(registryIP, registryport);
 	string response = c.sendMsgToRegistry(msg);
 
 	string delim = "|";

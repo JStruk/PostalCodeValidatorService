@@ -64,7 +64,8 @@ public:
 	/*
 	Methods
 	*/
-	HostInfo initServer(string registryIP, string registryPort, string _ourTeamName, string _ourTeamID);
+	HostInfo initServer(string _ourTeamName, string _ourTeamID);
+	void setRegistryInfo(string registryIP, string registryPort);
 	HostInfo getIP();
 	void listenForClients();
 	void processClientRequest(SOCKET clientsocket);

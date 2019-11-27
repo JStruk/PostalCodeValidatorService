@@ -24,8 +24,10 @@ int main()
 	logger.LogMessage(actions::STARTING_SERVICE, "");
 
 	string FileName = "config.ini";
-	string	registryIP;
-	string	registryPort;
+	string	serviceIP;
+	string	servicePort;
+	string registryIP;
+	string registryPort;
 	HostInfo hostInfo;
 
 	string teamName = "BOSS";
@@ -46,16 +48,19 @@ int main()
 	string teamID = s.registerTeam(registryIP, registryPort);
 	//cout << "Team ID: " << teamID << endl;
 
+	//Setup the server to listen for connections to the service
+	Server server = Server();
+
+	hostInfo = server.initServer(teamName, teamID);
+	server.setRegistryInfo(registryIP, registryPort);
+
 	//Register the service with the registry
-	int didItRegister = s.registerService(registryIP, registryPort, teamName, teamID);
+	int didItRegister = s.registerService(registryIP, registryPort, hostInfo.IP, hostInfo.port, teamName, teamID);
 	/*if (didItRegister == 0) {
 		cout << "Service successfully registered. Will now listen for client connections..." << endl << endl;
 	}*/
 
-	//Setup the server to listen for connections to the service
-	Server server = Server();
-
-	hostInfo = server.initServer(registryIP, registryPort, teamName, teamID);
+	
 
 	//Start accepting clients / requests
 	server.listenForClients();

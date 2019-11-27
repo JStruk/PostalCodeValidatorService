@@ -474,7 +474,7 @@ int ServiceRequest::Verify(string rIP, string rPort, string ourTeamName, string 
 	//arg1 needs to be a string and in the form "ANANAN"
 	//Region must be: NL, NS, NB, PE, QC, ON, MB, SK, AB, BC, YT, NT, NU
 
-	if (arg1DataType != "string") {
+	if (arg1DataType != "string" && arg1DataType != "STRING") {
 		return 2;
 	}
 
@@ -490,8 +490,7 @@ int ServiceRequest::Verify(string rIP, string rPort, string ourTeamName, string 
 	}
 
 	//cout << endl << "Verifying Arg2 Datatype: \n " << "Expected: string\n" << "Actual: " << arg2DataType << endl;
-
-	if (arg2DataType != "string") {
+	if (arg2DataType != "string" && arg2DataType != "STRING") {
 		return 2;
 	}
 
@@ -535,7 +534,7 @@ string ServiceRequest::BuildVerifyTeamMsg(string ourTeamName, string ourTeamID) 
 	msg += "|";
 	msg += teamID;
 	msg += "|";
-	msg += serviceName;
+	msg += TAG_NAME;
 	msg += "|";
 	msg += endOfSegment;
 	msg += newLine;
